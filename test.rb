@@ -21,14 +21,14 @@ answers_file.each_line do |line|
 	question_index += 1
 end
 
-print "Всего вопросов: #{questions.size}\n".green
+#print "Всего вопросов: #{questions.size}\n".green
 
 a=true
 
 questions.shuffle.each do |question|
 	print "#{'-'*88}\n".cyan
-	print "Всего вопросов:"
-	print " #{total_answers_count}".yellow
+	print "Вопрос:"
+	print " #{total_answers_count + 1}".yellow
 	print " из "
 	print "#{questions.size}\n".yellow
 	if total_answers_count > 0
