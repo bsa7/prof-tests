@@ -1,10 +1,11 @@
-%h1
-	= I18n.t :about_tests
+#content
+	%h1
+		= I18n.t :about_tests
 
-%h2
-	На сегодня есть два вида тестов:
+	%h2
+		На сегодня есть два вида тестов, выбирай:
 
-	.test-type-select
-		1. Сосуды, роботающие под давлением
-	.test-type-select
-		2. Трубопроводы пара и горячей воды
+		%a.test-type-select.br5.p30{href: "/pressure-vessels"}
+			1. Сосуды, работающие под давлением
+		%a.test-type-select.br5.p30{href: "/pipelines-of-steam-and-hot-water"}
+			2. Трубопроводы пара и горячей воды
