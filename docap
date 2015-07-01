@@ -4,8 +4,8 @@ git add .
 git add --all
 git add -u .
 git commit -m "$1"
-git pull u116 master
-git push u116 master
+#git pull u116 master
+#git push u116 master
 git pull sloninfobox master
 git push sloninfobox master
 
