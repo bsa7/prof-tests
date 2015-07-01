@@ -11,20 +11,20 @@
 // about supported directives.
 //
 //= require jquery-2.1.1.min
-//= require handlebars.runtime-v3.0.0
-//= require lz-string.min
-//= require_tree ./templates
+//= no require handlebars.runtime-v3.0.0
+//= no require lz-string.min
+//= no require_tree ./templates
 //= no require styling
 //= no require select2.min
 //= no require select2_locale_ru
 //= no require jquery.dropdown.js
-//= require vars
+//= no require vars
 //= require common
 //= no require devise
-//= require messages
-//= require navigator
-//= require sha
-//= require error_handling
+//= no require messages
+//= no require navigator
+//= no require sha
+//= no require error_handling
 //= no require jquery.nouislider.all.min
 //= require jquery.fancybox.pack
 //= no require jquery.pickmeup.min
