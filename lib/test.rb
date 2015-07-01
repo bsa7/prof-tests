@@ -18,9 +18,9 @@ print "Введите ваш выбор (1 2) "
 tests_type = gets.chomp
 
 if tests_type == "1"
-	dir = "/home/slon/projects/tests/public/tests/pressure_vessels/"
+	dir = "#{Dir.pwd}/../public/tests/pressure_vessels/"
 elsif tests_type == "2"
-	dir = "/home/slon/projects/tests/public/tests/pipelines_of_steam_and_hot_water/"
+	dir = "#{Dir.pwd}/../public/tests/pipelines_of_steam_and_hot_water/"
 end
 
 #print dir+"questions.txt\n"
