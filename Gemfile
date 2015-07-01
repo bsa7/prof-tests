@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'puma'
-gem 'mysql2', '0.3.15'
+gem 'mysql2', '0.3.18'
 #gem 'redis'
 #gem 'redis-objects'
 
