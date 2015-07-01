@@ -56,6 +56,7 @@ group :development do
 	gem 'capistrano-rails',   require: false
 	gem 'capistrano-bundler', require: false
 	gem 'capistrano-puma',   require: false
+	gem 'capistrano-local-precompile', require: false
 	gem 'erb2haml'
 	gem 'rails-erd', '~> 1.1.0'
 end

@@ -1,3 +1,5 @@
+require 'capistrano/local_precompile'
+
 app_env = ENV['RAILS_ENV']
 set :repo_url, 'ssh://git@109.120.168.31:2298/home/git/tests.git'
 
