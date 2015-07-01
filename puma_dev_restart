@@ -1,0 +1,7 @@
+cd /home/slon/projects/tests
+rm -r tmp/cache
+mkdir -p /tmp/shared/pids
+mkdir -p /tmp/shared/sockets
+kill -9 `cat /tmp/shared/pids/tests.pid`
+rm -f /tmp/shared/sockets/tests.sock
+RAILS_ENV=`cat env` puma --debug
