@@ -2,11 +2,30 @@ require 'colorize'
 require 'unicode'
 require 'terminfo'
 
+
 screen_sizes = TermInfo.screen_size
 screen_width = screen_sizes[1]
 wrong_answers_count = 0
 total_answers_count = 0
-question_file = File.open('questions.txt').read
+
+
+print "Есть два варианта билетов:\n".yellow
+print "#{'='*screen_width}\n".yellow
+print "1. Сосуды, работающие под давлением\n"
+print "2. Трубопроводы пара и горячей воды\n"
+print "Введите ваш выбор (1 2) "
+
+tests_type = gets.chomp
+
+if tests_type == "1"
+	dir = "/home/slon/projects/tests/public/tests/pressure_vessels/"
+elsif tests_type == "2"
+	dir = "/home/slon/projects/tests/public/tests/pipelines_of_steam_and_hot_water/"
+end
+
+#print dir+"questions.txt\n"
+
+question_file = File.open(dir+'questions.txt').read
 questions = []
 question_file.each_line do |line|
 	if line[/^\d+\.\s/]
@@ -17,14 +36,18 @@ question_file.each_line do |line|
 	end
 end
 
-answers_file = File.open('answers.txt').read
+#print questions.inspect
+
+answers_file = File.open(dir+'answers.txt').read
 question_index = 0
 answers_file.each_line do |line|
+#	print "#{question_index}(#{questions[question_index]}): #{line}".green
 	questions[question_index][:right_answer] = line.chomp
 	question_index += 1
 end
 
-#print "Всего вопросов: #{questions.size}\n".green
+
+print "Всего вопросов: #{questions.size}\n".green
 
 a=true
 
