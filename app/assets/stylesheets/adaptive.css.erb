@@ -1,0 +1,109 @@
+<%
+	$screen_sizes                   = ["767px", "767px", "1100px", "1613px"]
+	$max_content_width              = ["460px", "767px", "none", "none"]                 # max page content width for pages width fields
+	$fs                             = ["16px", "16px", "16px", "16px"]                   # usual font size
+	$fs1                            = ["17px", "17px", "19px", "19px"]                   # big header font size
+	$fs2                            = ["18px", "20px", "23px", "23px"]                   # middle header font size
+	$fs3                            = ["20px", "23px", "29px", "29px"]                   # middle header font size
+	$fs4                            = ["22px", "28px", "37px", "37px"]                   # middle header font size
+	$fs5                            = ["24px", "31px", "43px", "43px"]                   # middle header font size
+	$fs6                            = ["26px", "34px", "49px", "49px"]                   # middle header font size
+	$fs7                            = ["28px", "37px", "55px", "55px"]                   # middle header font size
+	$fs8                            = ["30px", "40px", "61px", "61px"]                   # middle header font size
+	$fs9                            = ["32px", "43px", "67px", "67px"]                   # middle header font size
+	$fs10                           = ["34px", "46px", "73px", "73px"]                   # middle header font size
+	$performers_filter_width        = ["100%", "300px", "500px", "500px"]                 # width of performer-filter block
+	$performer_page_width           = ["100%","100%","1060px","1060px"]                   # width of performer page
+	$filter_inputs_width            = ["100%","100%","247px","247px"]                     # widths of inputs in performer-filter panel
+	$gender_glyph_left_margin       = ["0", "0", "23px", "23px"]    	                     # left margin for glyph-male and glyph-female
+	$vod                            = ["5px", "5px", "10px", "10px"]                     # value of ruler division
+	$rate_width                     = ["90", "104", "129", "129"]
+	$rate_height                    = ["26", "26", "26", "26"]
+	$rate_font_size                 = ["18px", "20px", "24px", "24px"]
+	$rate_letter_spacing            = ["0px", "1px", "2px", "2px"]
+	$performer_item_width_nominated = ["95%", "95%", "45%", "45%"]
+	$performer_item_width_retracted = ["95%", "95%", "45%", "45%"]
+	$reg_circle_diameter            = ["900px", "1400px", "1600px", "1600px"]
+	$reg_circle_top                 = ["-100px", "-300px", "-500px", "-500px"]
+	$reg_circle_right               = ["-500px", "-100px", "-1100px", "-1100px"]
+	$footer_price_style             = [
+		"width: 150px; position: relative; text-align: center;",
+		"width: 150px; position: relative; text-align: center;",
+		"width: 220px; position: absolute; text-align: right; padding-top: 11px; padding-bottom: 2px;",
+		"width: 150px; position: relative; text-align: center; padding: 11px;"]
+	$footer_description_h2_style    = [
+		"font-size: 13px;",
+		"font-size: 13px;",
+		"font-size: 13px;",
+		"font-size: 17px;"
+	]
+	$glyph_settings_style           = [
+		"display: block",
+		"display: block",
+		"display: block",
+		"display: none"
+	]
+
+
+	#--------------------------------------------------------------------------------------------------------------------
+	def render_styles index
+		$locals = {
+			             max_content_width: $max_content_width[index],
+			                            fs: $fs[index],
+			                           fs1: $fs1[index],
+			                           fs2: $fs2[index],
+			                           fs3: $fs3[index],
+			                           fs4: $fs4[index],
+			                           fs5: $fs5[index],
+			                           fs6: $fs6[index],
+			                           fs7: $fs7[index],
+			                           fs8: $fs8[index],
+			                           fs9: $fs9[index],
+			                          fs10: $fs10[index],
+			       performers_filter_width: $performers_filter_width[index],
+			          performer_page_width: $performer_page_width[index],
+			           filter_inputs_width: $filter_inputs_width[index],
+			      gender_glyph_left_margin: $gender_glyph_left_margin[index],
+			                           vod: $vod[index],
+			                    rate_width: $rate_width[index],
+			                   rate_height: $rate_height[index],
+			performer_item_width_nominated: $performer_item_width_nominated[index],
+			performer_item_width_retracted: $performer_item_width_retracted[index],
+			                rate_font_size: $rate_font_size[index],
+			           rate_letter_spacing: $rate_letter_spacing[index],
+			           reg_circle_diameter: $reg_circle_diameter[index],
+			                reg_circle_top: $reg_circle_top[index],
+			              reg_circle_right: $reg_circle_right[index]
+		}
+		ERB.new( File.read("#{Rails.root}/app/assets/stylesheets/_adaptive_styles.css.erb")).result()
+	end
+
+%>
+
+@media screen and (max-width: <%= $screen_sizes[0] %>) {
+	<%= render_styles 0 %>
+	.performer-item .footer .price {
+		<%= $footer_price_style[0] %>
+	}
+	.performer-item .footer .description h2 {
+		<%= $footer_description_h2_style[0]%>
+	}
+	.glyph-settings {
+		<%= $glyph_settings_style[0]%>
+	}
+}
+<% $screen_sizes[1..-1].each_with_index do |screen_width, index| %>
+	@media screen and (min-width: <%= screen_width %>) {
+		<%= render_styles index+1 %>
+		.performer-item .footer .price {
+			<%= $footer_price_style[index+1] %>
+		}
+		.performer-item .footer .description h2 {
+			<%= $footer_description_h2_style[index+1]%>
+		}
+		.glyph-settings {
+			<%= $glyph_settings_style[index+1]%>
+		}
+	}
+<% end %>
+

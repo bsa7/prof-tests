@@ -1,0 +1,157 @@
+.gray-circle {
+	width: <%= $locals[:reg_circle_diameter] %>;
+	height: <%= $locals[:reg_circle_diameter] %>;
+	top: <%= $locals[:reg_circle_top] %>;
+	right: <%= $locals[:reg_circle_right] %>;
+}
+
+.fs {
+	font-size: <%= $locals[:fs] %> !important;
+}
+.fs1 {
+	font-size: <%= $locals[:fs1] %> !important;
+}
+.fs2 {
+	font-size: <%= $locals[:fs2] %> !important;
+}
+.fs3 {
+	font-size: <%= $locals[:fs3] %> !important;
+}
+.fs4 {
+	font-size: <%= $locals[:fs4] %> !important;
+}
+
+.fs5 {
+	font-size: <%= $locals[:fs5] %> !important;
+}
+
+.fs6 {
+	font-size: <%= $locals[:fs6] %> !important;
+}
+
+.fs7 {
+	font-size: <%= $locals[:fs7] %> !important;
+}
+
+.fs8 {
+	font-size: <%= $locals[:fs8] %> !important;
+}
+
+.fs9 {
+	font-size: <%= $locals[:fs9] %> !important;
+}
+
+.fs10 {
+	font-size: <%= $locals[:fs10] %> !important;
+}
+
+.fs:before {
+	font-size: <%= $locals[:fs] %> !important;
+}
+.fs1:before {
+	font-size: <%= $locals[:fs1] %> !important;
+}
+.fs2:before {
+	font-size: <%= $locals[:fs2] %> !important;
+}
+.fs3:before {
+	font-size: <%= $locals[:fs3] %> !important;
+}
+.fs4:before {
+	font-size: <%= $locals[:fs4] %> !important;
+}
+
+.fs5:before {
+	font-size: <%= $locals[:fs5] %> !important;
+}
+
+.fs6:before {
+	font-size: <%= $locals[:fs6] %> !important;
+}
+
+.fs7:before {
+	font-size: <%= $locals[:fs7] %> !important;
+}
+
+.fs8:before {
+	font-size: <%= $locals[:fs8] %> !important;
+}
+
+.fs9:before {
+	font-size: <%= $locals[:fs9] %> !important;
+}
+
+.fs10:before {
+	font-size: <%= $locals[:fs10] %> !important;
+}
+
+.performers-filter {
+	width: <%= $locals[:performers_filter_width] %>;
+}
+
+<% if $locals[:performers_filter_width][/px/] %>
+	.glyph-settings.nominated {
+		right: <%= $locals[:performers_filter_width].to_i - 40 %>px;
+	}
+	.performers-filter.retracted {
+		right: -<%= $locals[:performers_filter_width].to_i - 10 %>px !important;
+	}
+<%# elsif $locals[:performers_filter_width][/\%/]%>
+<% else %>
+	.glyph-settings.nominated {
+		left: 0;
+	}
+	.performers-filter.retracted {
+		right: -<%= $locals[:performers_filter_width].to_i - 2 %>% !important;
+	}
+<% end %>
+
+#search-by-specialization, #search-by-date, #performer-gender {
+	width: <%= $locals[:filter_inputs_width]; %>
+}
+
+.performers-list.nominated {
+	margin-right: <%= $locals[:performers_filter_width] %>;
+}
+
+.glyph-male, .glyph-female {
+	margin-left: <%= $locals[:gender_glyph_left_margin] %>;
+}
+
+#content > .header .left-logo, #content > .footer .left-logo {
+	font-size: <%= $locals[:fs1] %>;
+}
+
+#content > .footer .left-logo {
+	font-size: <%= $locals[:fs2] %>;
+}
+
+.top-menu ul li {
+	font-size: <%= $locals[:fs1] %>;
+}
+
+.star-rate text {
+	font-size: <%= $locals[:rate_font_size] %>;
+	letter-spacing: <%= $locals[:rate_letter_spacing] %>;
+}
+
+.star-rate > svg {
+	width: <%= $locals[:rate_width] %>px;
+	height: <%= $locals[:rate_height] %>px;
+}
+
+.performers-list.nominated .performer-item {
+	width: <%= $locals[:performer_item_width_nominated] %>;
+}
+
+.performers-list.retracted .performer-item {
+	width: <%= $locals[:performer_item_width_retracted] %>;
+}
+
+.performer-page {
+	width: <%= $locals[:performer_page_width] %>
+}
+
+.gallery .detailed * {
+	font-size: <%= $locals[:fs1] %>
+}

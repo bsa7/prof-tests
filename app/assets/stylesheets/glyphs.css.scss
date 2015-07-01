@@ -1,0 +1,352 @@
+@font-face {
+	font-family: 'webglyphs';
+	src: url('/assets/fonts/glyphs.eot');
+	src: url('/assets/fonts/glyphs.eot?#iefix') format('embedded-opentype'),
+	     url('/assets/fonts/glyphs.woff') format('woff'),
+	     url('/assets/fonts/glyphs.ttf') format('truetype'),
+	     url('/assets/fonts/glyphs.svg#webglyphs') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.glyph:before {
+	font-family: 'webglyphs' !important; 
+	font-size: 60px;
+	position: relative;
+	display: inline-block;
+	dominant-baseline: text-before-edge;
+	pointer-events: none;
+}
+
+.glyph-search:before {
+	content: "\F001";
+	font-size: 35px;
+}
+
+.glyph-freenarium-logo:before {
+	content: "\F011";
+	font-size: 35px;
+}
+
+.glyph-chose:before {
+	content: "\F002";
+	font-size: 35px;
+}
+
+.glyph-check:before {
+	content: "\F003";
+	font-size: 35px;
+}
+
+.glyph-in-circle:before {
+	width: 54px;
+	height: 46px;
+	border-radius: 30px;
+	border: 2px solid #6a6a6a;
+	color: #6a6a6a;
+	padding: 8px 0px 0px 0px;
+}
+
+.glyph-close:before, .glyph-delete:before {
+	content: "\F004";
+	text-shadow: 0px 0px 15px white;
+	font-size: 17px;
+}
+
+.glyph-close:before {
+	position: absolute;
+	top: 9px;
+	left: 9px;
+}
+
+.glyph-cite {
+	width: 29px;
+	text-align: center;
+}
+
+.glyph-star:before {
+	content: "\F00D";
+	color: #252525;
+}
+
+.glyph-rouble:before {
+	content: "\F00E";
+/*
+	font-size: 20px;
+	transform: scaleY(-1);
+	width: 9px;
+*/
+	color: #0099ff;
+	position: absolute;
+	top: 17px;
+	margin-left: 3px;
+	width: 20px;
+}
+
+.glyph-5star:before {
+	content: "\F00D\F00D\F00D\F00D\F00D";
+	color: #252525;
+}
+
+.star-background:before {
+	background: -webkit-gradient(linear, left top, left bottom, from(#f00), to(#333));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	display: initial;
+}
+
+.glyph-settings:before, .glyph-edit:before {
+	pointer-events: none;
+	content: "\F00C";
+	font-size: 40px;
+	top: 15px;
+	left: 4px;
+	color: #eaeaea;
+}
+
+.glyph-cite:before {
+	content: "\F007";
+	position: absolute;
+	font-size: 40px;
+	top: -62px;
+	left: 1px;
+	color: #777;
+	height: 20px;
+}
+
+.glyph-female:hover:before, .glyph-male:hover:before {
+	color: #fff000;
+}
+
+.glyph-next:before {
+	content: "\F009";
+}
+
+.glyph-prev:before {
+	content: "\F008";
+}
+
+.glyph-next:before, .glyph-prev:before {
+	pointer-events: none;
+	vertical-align: middle;
+	color: #eee;
+	-webkit-filter: drop-shadow( 0px 0px 5px #000 );
+	filter: drop-shadow( 0px -5px 5px #000 ); /* Same syntax as box-shadow */
+/*
+	position: absolute;
+	width: 50%;
+	height: 110px;
+	top: 35px;
+	left: 50%;
+	margin-left: -25%;
+	font-size: 166px;
+	display: inline-block;
+*/
+}
+
+.glyph-female:before, .glyph-male:before {
+	font-size: 30px;
+	display: inline-block;
+	color: #777;
+}
+
+.glyph-female:before {
+	content: "\F00A";
+}
+
+.glyph-male:before {
+	content: "\F00B";
+}
+
+.glyph-close {
+	cursor: pointer;
+	z-index: 13;
+}
+
+.glyph-close:hover:before {
+	color: red;
+	text-shadow: 0px 0px 5px rgba(255, 255, 255, 1);
+}
+
+span[id^="user-"] {
+	position: relative;
+}
+
+span[id^="user-"]:before {
+	position: absolute;
+	top: -2px;
+/*
+	left: 10px;
+*/
+	margin-left: 10px;
+	color: #878787;
+	font-size: 25px;
+	z-index: 1;
+}
+
+.performers-filter span[id^='user-']:before {
+	top: 10px !important;
+}
+
+span#user-name:before {
+	content: "\F005";
+}
+
+span#user-phone:before {
+	content: "\F006";
+}
+
+.fancybox-prev span:before, .fancybox-next span:before {
+	font-family: 'webglyphs' !important;
+/*
+	text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.66);
+*/
+	-webkit-filter: drop-shadow( 0px 0px 5px #000 );
+	filter: drop-shadow( 0px 0px 5px #000 );
+	font-size: 50px;
+	position: relative;
+	display: inline-block;
+	color: #777;
+}
+
+.fancybox-prev span:hover:before, .fancybox-next span:hover:before {
+	color: #eee;
+}
+
+.fancybox-prev span:before {
+	content: "\F009";
+	right: -40px;
+}
+
+.fancybox-next span:before {
+	content: "\F008";
+	left: -40px;
+}
+
+.glyph-client-no-avatar {
+	position: relative;
+	display: block;
+/*
+	width: 126px;
+*/
+	height: 107px;
+}
+
+.glyph-client-no-avatar:before {
+	content: "\F00F";
+	position: absolute;
+	top: 5px;
+	left: 4px;
+	font-size: 91px;
+	width: 55px;
+	z-index: 12;
+}
+
+.glyph-heart {
+	position: relative;
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	background-color: #808080;
+	border-radius: 20px;
+	pointer-events: none;
+}
+
+.glyph-heart:before {
+	content: "\F010";
+	position: absolute;
+	top: 5px;
+	left: 4px;
+	font-size: 26px;
+	color: yellow;
+}
+
+.glyph-widetall:before {
+	content: "\F012";
+	position: absolute;
+	right: 0px;
+	z-index: 17;
+	cursor: pointer;
+	pointer-events: all;
+}
+
+.edit-form .glyph-widetall:before {
+	top: -65px;
+}
+
+.index-form .glyph-widetall:before {
+	top: -124px;
+}
+
+.main-page-form .glyph-widetall:before {
+	top: -69px;
+}
+
+input[type='checkbox'].tiny + label {
+	padding-left: 9px;
+	cursor: pointer;
+}
+
+input[type='checkbox'].tiny:before {
+	font-family: 'webglyphs' !important; 
+	content: "\F013";
+	width: 22px !important;
+	height: 22px !important;
+	display: block;
+	position:absolute;
+	top:0px;
+	left: -25px;
+	cursor: pointer;
+}
+
+input[type='checkbox'].tiny:checked:before {
+	font-family: 'webglyphs' !important; 
+	content: "\F014";
+	left: -25px;
+}
+
+.glyph-add:before {
+	content: "\F015";
+	font-size: 22px;
+	color: #aaa;
+}
+
+.currency {
+	position: relative;
+	display: block;
+}
+
+.currency:before {
+	font-family: 'webglyphs' !important; 
+	content: "\F00E";
+	display: block;
+	color: #585c5f;
+	position: absolute;
+	top: 7px;
+	right: 10px;
+	margin-left: 3px;
+	width: 20px;
+}
+
+.glyph-reduce:before, .glyph-increase:before {
+	font-size: 50px;
+	width: 54px;
+	height: 57px;
+	font-family: 'webglyphs' !important; 
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background-color: white;
+}
+
+.glyph-reduce:before {
+	content: "\F017";
+	color: red;
+}
+
+.glyph-increase:before {
+	content: "\F018";
+	color: navy;
+}
+
+

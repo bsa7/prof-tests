@@ -1,0 +1,16 @@
+<% require "utils" %>
+<%= Utils.create_css_rules(%w(3 5 10 20 40 60 100 150 300),   ".ml<size>",  "margin-left: <size>px;") %>
+<%= Utils.create_css_rules(%w(10 20),                         ".ml<size>p", "margin-left: <size>% !important;") %>
+<%= Utils.create_css_rules(%w(5 10 15),                       ".mr<size>",  "margin-right: <size>px !important;") %>
+<%= Utils.create_css_rules(%w(5 10 15 16 20 30 40 44 50 100), ".mt<size>",  "margin-top: <size>px !important;") %>
+<%= Utils.create_css_rules(%w(5 10),                          ".mt<size>p", "margin-top: <size>% !important;") %>
+<%= Utils.create_css_rules(%w(0 5 10 15 20 40 55 60),         ".mb<size>",  "margin-bottom: <size>px !important;") %>
+<%= Utils.create_css_rules(%w(5 8 10 15 20),                  ".m<size>",   "margin: <size>px !important;") %>
+<%= Utils.create_css_rules(%w(4 20 30),                       ".mh<size>",  "margin-left:<size>px !important;margin-right:<size>px !important;") %>
+<%= Utils.create_css_rules(%w(8),                             ".mv<size>",  "margin-top:<size>px !important;margin-bottom:<size>px !important;") %>
+<%= Utils.create_css_rules(%w(5 10 20),                       ".pl<size>",  "padding-left:<size>px !important;") %>
+<%= Utils.create_css_rules(%w(10 20),                         ".pr<size>",  "padding-right:<size>px !important;") %>
+<%= Utils.create_css_rules(%w(5 10 20 30 40 50 60 70 80 90 100), ".pt<size>",  "padding-top:<size>px !important;") %>
+<%= Utils.create_css_rules(%w(0),                             ".pb<size>",  "padding-bottom:<size>px !important;") %>
+<%= Utils.create_css_rules(%w(5 10 20 40),                    ".p<size>",   "padding:<size>px !important;") %>
+<%= Utils.create_css_rules(%w(10 30),                         ".ph<size>",  "padding-left:<size>px !important;padding-right:<size>px !important;") %>
