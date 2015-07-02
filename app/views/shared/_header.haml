@@ -1,3 +1,7 @@
-.header.bg1.p5.c1.sh2
-	%h3 
-		= I18n.t params['test_type'] ? params['test_type'].gsub(/-/,'_') : :tests
+.header.bg1.p30.c1.sh2
+	%h3.ib
+		%a.c3{href: "/"}
+			В начало
+	- if params['test_type'] 
+		%h3.ib 
+			= I18n.t params['test_type'].gsub(/-/,'_')

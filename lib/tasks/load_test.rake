@@ -41,7 +41,8 @@ task :load_tests => :environment do
 			#Utils.d question: question[:text]
 			this_question = Question.where(text: question[:text])
 			if this_question.size == 0
-				question_rec = Question.new(text: question[:text], test_name_id: test_name_id).save!
+				question_rec = Question.new(text: question[:text], test_name_id: test_name_id)
+				question_rec.save!
 				question_id = question_rec.id
 			else
 				question_id = this_question.first.id
@@ -51,12 +52,14 @@ task :load_tests => :environment do
 				next if key.class == Symbol
 				#Utils.d answer: question[key]
 				if AnswerVariant.where(question_id: question_id, text: question[key]).size == 0
-					answer_variant = AnswerVariant.new(answer_id: key, text: question[key], question_id: question_id).save!
+					answer_variant = AnswerVariant.new(answer_id: key, text: question[key], question_id: question_id)
+					answer_variant.save!
 				end
 			end
 
 			if RightAnswer.where(question_id: question_id).size == 0
-				right_answer = RightAnswer.new(question_id: question_id, answer_id: question[:right_answer]).save!
+				right_answer = RightAnswer.new(question_id: question_id, answer_id: question[:right_answer])
+				right_answer.save!
 			end
 
 		end
