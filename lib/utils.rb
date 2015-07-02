@@ -5,6 +5,11 @@ include Magick
 class Utils
 
 	#----------------------------------------------------------------------------------------------------
+	def self.get_questions(dirname)
+		
+	end
+
+	#----------------------------------------------------------------------------------------------------
 	def self.create_css_rules(sizes, style_selector, rules)
 		rule_stub = "<rules>"
 		size_stub = "<size>"
