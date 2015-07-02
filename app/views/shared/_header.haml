@@ -1,7 +1,10 @@
 .header.bg1.p30.c1.sh2
 	%h3.ib
 		%a.c3{href: "/"}
-			В начало
+			- if !params['test_type'] 
+				В начало
+			- else
+				Тесты
 	- if params['test_type'] 
 		%h3.ib 
 			= I18n.t params['test_type'].gsub(/-/,'_')

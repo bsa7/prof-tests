@@ -14,8 +14,13 @@ class TestingController < ApplicationController
 		Utils.d params: params
 		right_answer_id = RightAnswer.where(question_id: params["question_id"]).first.answer_id
 		answer_status = params["answer_id"] == right_answer_id
-		right_answer_text = "right_answer_text"
-		render json: {is_right: answer_status, right_answer: right_answer_text}
+		right_answer_text = AnswerVariant.where(question_id: params["question_id"], answer_id: right_answer_id).first.text
+		your_answer_text = AnswerVariant.where(question_id: params["question_id"], answer_id: params["answer_id"]).first.text
+		render json: {
+			is_right: answer_status,
+			right_answer: right_answer_text,
+			your_answer: your_answer_text,
+			question: Question.find(params["question_id"]).text}
 	end
 
 end
