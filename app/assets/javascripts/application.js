@@ -21,7 +21,7 @@
 //= no require vars
 //= require common
 //= no require devise
-//= no require messages
+//= require messages
 //= no require navigator
 //= no require sha
 //= no require error_handling

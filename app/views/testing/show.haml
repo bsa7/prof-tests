@@ -1,3 +1,6 @@
-.bg2.center
+.bg2.p5
 	%h2.c2
-		Вопрос:
+		= "Вопрос: #{@question[:text]}"
+	- @question[:answers].keys.shuffle.each do |answer_key|
+		%a.db.bg3.c0.test-type-select.br5p.p30.mt2{"data-ajax" => 1, "data-type" => :answer_variant, "data-question-id" => @question[:id], "data-answer-id" => answer_key}
+			= @question[:answers][answer_key]

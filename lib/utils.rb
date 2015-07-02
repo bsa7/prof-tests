@@ -5,8 +5,21 @@ include Magick
 class Utils
 
 	#----------------------------------------------------------------------------------------------------
-	def self.get_questions(dirname)
-		
+	def self.get_next_question(dirname)
+		question = {}
+		testname = dirname[/[^\/]+$/].gsub(/-/, '_')
+		testname_id = TestName.where(load_dir: testname)
+		question_list = Question.where(test_name_id: testname_id).pluck(:id)
+		question_id = question_list.sample
+		question[:id] = question_id
+		question[:text] = Question.find(question_id).text
+		answer_variant_list = AnswerVariant.where(question_id: question_id).pluck(:id)
+		question[:answers] = {}
+		answer_variant_list.each do |answer_variant_id|
+			answer_variant = AnswerVariant.find(answer_variant_id)
+			question[:answers][answer_variant.answer_id] = answer_variant.text
+		end
+		question
 	end
 
 	#----------------------------------------------------------------------------------------------------

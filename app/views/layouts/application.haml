@@ -8,5 +8,10 @@
 		= csrf_meta_tags
 	%body
 		= render "shared/header"
-		= yield
+		#content.bg3
+			= yield
 		= render "shared/footer"
+		%div#status_wrapper
+			%div.data-transparent
+			%div.data-message
+
