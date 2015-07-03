@@ -16,7 +16,7 @@ class Utils
 
 	#----------------------------------------------------------------------------------------------------
 	def self.get_next_question(dirname, session_id, question_list = nil)
-		Utils.d session_id: session_id, question_list: question_list
+#		Utils.d session_id: session_id, question_list: question_list
 		question = {}
 		testname = dirname[/[^\/]+$/].gsub(/-/, '_')
 		testname_id = TestName.where(load_dir: testname)
@@ -116,7 +116,7 @@ class Utils
 	#- detect attachment type --------------------------------------------------------------------------------
 	def self.detect_attachment_type filename
 		unless filename
-			Utils.d filename, file_ext
+#			Utils.d filename, file_ext
 		end
 		file_ext = filename[/(?<=\.)[^\.]+$/]
 		file_ext = file_ext ? file_ext.downcase : "extension not defined"

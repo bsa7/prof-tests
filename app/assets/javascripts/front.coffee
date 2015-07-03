@@ -9,7 +9,7 @@ window.document_onclick = (e) ->
 			question_id = $(e.target).data("question-id")
 			answer_id = $(e.target).data("answer-id")
 			window.get_ajax("/check_answer",
-				session_id: window.session_identify()
+				client_id: window.session_identify()
 				question_id: question_id
 				answer_id: answer_id
 				question_list: $("#question-list").data("question-list")
@@ -43,7 +43,12 @@ check_answer = (data, params) ->
 render_question = (data, params) ->
 	$("#content").html(data)
 	question_answered_count = parseInt($('#question-list').data("question-count")) - parseInt($('#question-list').data("question-left"))
-	$("#counter").html("#{question_answered_count} / #{$('#question-list').data("question-count")}")
+	total_answer_count = parseInt($('#question-list').data("total-answers-count"))
+	right_answer_count = parseInt($('#question-list').data("right-answers-count"))
+	wrong_ansers_count = total_answer_count - right_answer_count
+	time_for_answers = parseFloat($('#question-list').data("time-for-answers"))
+	question_count = $('#question-list').data('question-count')
+	$("#counter").html("#{question_answered_count}(<p class='cred ib'>#{wrong_ansers_count}</p> / <p class='cgreen ib'>#{right_answer_count}</p>) из #{question_count} вопросов")
 
 #--------------------------------------------------------------------------------------------------
 window.session_identify = ->
