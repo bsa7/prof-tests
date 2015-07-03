@@ -6,7 +6,8 @@ class TestingController < ApplicationController
 	def show
 		Utils.d params_show: params, session: @session
 		dir = "#{Rails.root}/public/tests/#{params['test_type'].gsub(/-/,'_')}"
-		@question = Utils.get_next_question(dir, params['session_id'])
+		params["question_list"] = "" if !params["question_list"]
+		@question = Utils.get_next_question(dir, params['session_id'], params["question_list"].split(',').map(&:to_i))
 		respond_to do |format|
 			format.html{ render( "testing/show", layout: Utils.need_layout(params))}
 		end
@@ -50,7 +51,7 @@ class TestingController < ApplicationController
 	def client_shortcut_id(id)
 		client_shortcut = ClientShortcut.where(client_id: id)
 		if client_shortcut.size == 0
-			client_shortcut = ClientShortcut.new(client_id: id)
+			client_shortcut = ClientShortcut.new(client_id: id, ip: request.remote_ip)
 			client_shortcut.save!
 			client_shortcut.id
 		else

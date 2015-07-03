@@ -11,7 +11,7 @@
 	.pull-right
 		- if @session && @session[:client_id]
 			%a{href: "client_#{@session.client_id}"}
-	- if params['test_type'] 
+	- if params['test_type'] && @question[:count] && @question[:count] > 0 && @question[:list] && @question[:list].size > 0
 		.pull-right
-			.c1
-				(1 / 90)
+			.c1#counter
+				= "(#{@question[:count] - @question[:list].size} / #{@question[:count]})"

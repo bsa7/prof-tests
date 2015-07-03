@@ -15,12 +15,15 @@ class Utils
 	end
 
 	#----------------------------------------------------------------------------------------------------
-	def self.get_next_question(dirname, session_id)
-		Utils.d session_id: session_id
+	def self.get_next_question(dirname, session_id, question_list = nil)
+		Utils.d session_id: session_id, question_list: question_list
 		question = {}
 		testname = dirname[/[^\/]+$/].gsub(/-/, '_')
 		testname_id = TestName.where(load_dir: testname)
-		question_list = Question.where(test_name_id: testname_id).pluck(:id)
+		question[:count] = Question.where(test_name_id: testname_id).pluck(:id).size
+		if question_list.size == 0
+			question_list = Question.where(test_name_id: testname_id).pluck(:id)
+		end
 		question[:list] = question_list
 		question_id = question_list.sample
 		question[:id] = question_id
