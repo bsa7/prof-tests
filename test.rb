@@ -30,7 +30,10 @@ questions.shuffle.each do |question|
 	print "Вопрос:"
 	print " #{total_answers_count + 1}".yellow
 	print " из "
-	print "#{questions.size}\n".yellow
+	print "#{questions.size}".yellow
+ print "(#{total_answers_count - wrong_answers_count}".green
+ print "/"
+ print "#{wrong_answers_count})\n".red
 	if total_answers_count > 0
 		print "% правильных ответов: #{((total_answers_count.to_f - wrong_answers_count) / total_answers_count * 100).to_i}%\n".green
 	end
