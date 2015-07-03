@@ -8,3 +8,10 @@
 	- if params['test_type'] 
 		%h3.ib 
 			= I18n.t params['test_type'].gsub(/-/,'_')
+	.pull-right
+		- if @session && @session[:client_id]
+			%a{href: "client_#{@session.client_id}"}
+	- if params['test_type'] 
+		.pull-right
+			.c1
+				(1 / 90)

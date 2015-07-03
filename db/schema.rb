@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150702205115) do
+ActiveRecord::Schema.define(version: 20150703002157) do
 
   create_table "answer_variants", force: :cascade do |t|
     t.string   "answer_id",   limit: 255
@@ -22,6 +22,31 @@ ActiveRecord::Schema.define(version: 20150702205115) do
   end
 
   add_index "answer_variants", ["question_id"], name: "index_answer_variants_on_question_id", using: :btree
+
+  create_table "client_answers", force: :cascade do |t|
+    t.string   "client_shortcut_id",  limit: 255
+    t.string   "session_shortcut_id", limit: 255
+    t.integer  "question_id",         limit: 4
+    t.string   "answer_id",           limit: 255
+    t.boolean  "is_right",            limit: 1
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
+
+  add_index "client_answers", ["question_id"], name: "index_client_answers_on_question_id", using: :btree
+
+  create_table "client_shortcuts", force: :cascade do |t|
+    t.string   "client_id",  limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "clients", force: :cascade do |t|
+    t.string   "client_id",  limit: 255
+    t.string   "nick",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "questions", force: :cascade do |t|
     t.text     "text",         limit: 65535
@@ -41,6 +66,12 @@ ActiveRecord::Schema.define(version: 20150702205115) do
 
   add_index "right_answers", ["question_id"], name: "index_right_answers_on_question_id", using: :btree
 
+  create_table "session_shortcuts", force: :cascade do |t|
+    t.string   "session_id", limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "test_names", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "load_dir",   limit: 255
@@ -49,6 +80,7 @@ ActiveRecord::Schema.define(version: 20150702205115) do
   end
 
   add_foreign_key "answer_variants", "questions"
+  add_foreign_key "client_answers", "questions"
   add_foreign_key "questions", "test_names"
   add_foreign_key "right_answers", "questions"
 end

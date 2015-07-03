@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  client_id: MyString
+  nick: MyString
+
+two:
+  client_id: MyString
+  nick: MyString

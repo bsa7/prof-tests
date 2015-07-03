@@ -5,11 +5,23 @@ include Magick
 class Utils
 
 	#----------------------------------------------------------------------------------------------------
-	def self.get_next_question(dirname)
+	def  self.client_name(client_id)
+		client = Client.where(client_id: client_id)
+		if client.size > 0
+			client.first.nick
+		else
+			nil
+		end
+	end
+
+	#----------------------------------------------------------------------------------------------------
+	def self.get_next_question(dirname, session_id)
+		Utils.d session_id: session_id
 		question = {}
 		testname = dirname[/[^\/]+$/].gsub(/-/, '_')
 		testname_id = TestName.where(load_dir: testname)
 		question_list = Question.where(test_name_id: testname_id).pluck(:id)
+		question[:list] = question_list
 		question_id = question_list.sample
 		question[:id] = question_id
 		question[:text] = Question.find(question_id).text
