@@ -1,6 +1,9 @@
 require 'colorize'
 require 'unicode'
+require 'terminfo'
 
+screen_sizes = TermInfo.screen_size
+screen_width = screen_sizes[1]
 wrong_answers_count = 0
 total_answers_count = 0
 question_file = File.open('questions.txt').read
@@ -26,7 +29,7 @@ end
 a=true
 
 questions.shuffle.each do |question|
-	print "#{'-'*88}\n".cyan
+	print "#{'-'*screen_width}\n".cyan
 	print "Вопрос:"
 	print " #{total_answers_count + 1}".yellow
 	print " из "
@@ -38,7 +41,7 @@ questions.shuffle.each do |question|
 		print "% правильных ответов: #{((total_answers_count.to_f - wrong_answers_count) / total_answers_count * 100).to_i}%\n".green
 	end
 	print "#{question[:text].gsub(/\s\s+/, ' ')}".yellow
-	print "#{'='*88}\n".yellow
+	print "#{'='*screen_width}\n".yellow
 #	print question.keys.inspect
 	answer_variants = question.keys.reject{|x|x.class == Symbol}
 	answer_sorted = answer_variants.each_with_index.map{|x,i|[i+1, x]}
