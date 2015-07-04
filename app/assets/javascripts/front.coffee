@@ -37,7 +37,8 @@ check_answer = (data, params) ->
 		window.next_question()			
 	else
 		#window.dialog "<h2>#{data.question}</h2><h2 class='c1'>Ваш ответ:</h2>#{data.your_answer}<h1 class='cred'>Неправильный ответ.</h1><h2>Правильный ответ:</h2><p class='cgreen'>#{data.right_answer}</p><div class='btn btn-fancy-close'>Закрыть</div>"
-		$("#resume").html("<h2 class='c0'>Ваш ответ:</h2><p class='c1'>#{data.your_answer}</p><h1 class='cred'>Неправильный ответ.</h1><h2>Правильный ответ:</h2><p class='c1'>#{data.right_answer}</p><div class='mt30 btn btn-next'>Далее</div>")			
+		$("#resume").html("<h2 class='c0'>Ваш ответ:</h2><p class='c1'>#{data.your_answer}</p><h1 class='cred'>Неправильный ответ.</h1><h2>Правильный ответ:</h2><p class='c1'>#{data.right_answer}</p><div class='mt30 btn btn-next'>Далее</div>")
+		$(".test-type-select").remove()
 
 #--------------------------------------------------------------------------------------------------
 render_question = (data, params) ->

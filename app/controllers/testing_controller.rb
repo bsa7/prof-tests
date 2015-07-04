@@ -4,7 +4,6 @@ class TestingController < ApplicationController
 
 	#---------------------------------------------------------------------------------------------
 	def show
-		Utils.d params_show: params, session: @session
 		dir = "#{Rails.root}/public/tests/#{params['test_type'].gsub(/-/,'_')}"
 		params["question_list"] = "" if !params["question_list"]
 		@question = Utils.get_next_question(dir, params['session_id'], params["question_list"].split(',').map(&:to_i))
@@ -16,7 +15,6 @@ class TestingController < ApplicationController
 
 	#---------------------------------------------------------------------------------------------
 	def check
-		Utils.d params_check: params, session: @session
 		right_answer_id = RightAnswer.where(question_id: params["question_id"]).first.answer_id
 		answer_status = params["answer_id"] == right_answer_id
 		right_answer_text = AnswerVariant.where(question_id: params["question_id"], answer_id: right_answer_id).first.text
