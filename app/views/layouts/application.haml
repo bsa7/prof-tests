@@ -6,11 +6,11 @@
 		= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
 		= javascript_include_tag 'application', 'data-turbolinks-track' => true
 		= csrf_meta_tags
-	%body
-		= render "shared/header"
-		#content.bg3
+	%body.bg2.pt30
+		= render "shared/system_status_bar"
+		#content
 			= yield
-		= render "shared/footer"
+		= render "shared/system_navigation_bar"
 		%div#status_wrapper
 			%div.data-transparent
 			%div.data-message

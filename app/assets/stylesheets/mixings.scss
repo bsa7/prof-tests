@@ -1,0 +1,19 @@
+@mixin border-radius($radius) {
+	border-radius: $radius !important;
+	-webkit-border-radius: $radius !important;
+	-moz-border-radius: $radius !important;
+}
+
+@mixin btn {
+	cursor: pointer;
+	text-align: center;
+	&:hover {
+		filter: brightness(110%);
+		-webkit-filter: brightness(110%);
+	}
+}
+
+@mixin bg3 {
+	background-color: #fff;
+}
+

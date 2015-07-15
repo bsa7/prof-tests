@@ -1,21 +1,4 @@
-/*
-::selection { background: transparent; }
-::-moz-selection { background: transparent; }
-*/
-
-@mixin vertical-align {
-	position: relative;
-	top: 50%;
-	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
-}
-
-/*
-html, body {
-	overflow-x: hidden;
-}
-*/
+@import "mixings.scss";
 
 a * {
 	pointer-events: none;
@@ -67,23 +50,10 @@ html, body {
 }
 
 #content {
-/*	width: 100%;*/
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
-/*
-	text-align: center;
-*/
-}
-
-#content > .header {
-	width: 100%;
-	position: relative;
-	text-align: center;
-/*	padding-bottom: 46px;
-	margin-bottom: 125px;*/
-	height: 574px;
-	overflow: hidden;
+	max-width: 800px;
 }
 
 .test-type-select {
@@ -104,3 +74,10 @@ html, body {
 	color: white;
 }
 
+.question-card {
+	display: block;
+	@include bg3;
+	padding: 32px;
+	margin-top: 2px;
+	@include btn;
+}

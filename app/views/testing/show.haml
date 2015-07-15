@@ -3,7 +3,7 @@
 		= "Вопрос: #{@question[:text]}"
 	#resume
 	- @question[:answers].keys.shuffle.each do |answer_key|
-		%a.db.bg3.c0.test-type-select.br5p.p30.mt2{"data-ajax" => 1, "data-type" => :answer_variant, "data-question-id" => @question[:id], "data-answer-id" => answer_key}
+		%a.question-card{"data-ajax" => 1, "data-type" => :answer_variant, "data-question-id" => @question[:id], "data-answer-id" => answer_key}
 			= @question[:answers][answer_key]
 #question-list{"data-question-list" => (@question[:list] -= [@question[:id]]).join(','),
 	"data-time" => Time.now,
