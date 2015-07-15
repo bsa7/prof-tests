@@ -10,7 +10,7 @@ window.status_body = (status, html, seconds = null) ->
 			opacity: 0.9
 			"background-color": color_by_status[status]
 		$("#status_wrapper").css
-			top: "0px"
+			top: "#{window.getWindowSize().height - 96}px"
 	else
 		unless seconds
 			seconds = 4
@@ -23,7 +23,7 @@ window.status_body = (status, html, seconds = null) ->
 			$("#status_wrapper").stop()
 		$("#status_wrapper").css
 			"background-color": color_by_status[status]
-			top: "0px"
+			top: "#{window.getWindowSize().height - 96}px"
 		$("#status_wrapper > div.data-message").html html
 		left = ($("#status_wrapper").width() - $("#status_wrapper > .data-message").width())/2
 		top = ($("#status_wrapper").height() - $("#status_wrapper > .data-message").height())/2
