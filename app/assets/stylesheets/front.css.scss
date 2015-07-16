@@ -54,7 +54,13 @@ html, body {
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
-	max-width: 800px;
+}
+
+@media (min-width:1281px) { 
+	/* hi-res laptops and desktops */ 
+	#content {
+		max-width: 960px;
+	}
 }
 
 .test-type-select {
