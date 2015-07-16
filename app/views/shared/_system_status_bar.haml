@@ -7,9 +7,10 @@
 			%span.glyph.glyph-arrow-left.primary-color-text.pr32
 		%h2.ib
 			= "Тест: #{I18n.t params['test_type'].gsub(/-/,'_')}"
--#	.pull-right
+	.pull-right
 		- if @session && @session[:client_id]
 			%a{href: "client_#{@session.client_id}"}
+#system-progress-bar
 -#	- if params['test_type'] && @question[:count] && @question[:count] > 0 && @question[:list] && @question[:list].size > 0
 		.pull-right
 			.c1#counter
