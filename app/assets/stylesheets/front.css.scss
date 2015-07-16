@@ -126,6 +126,36 @@ body {
 	margin-right: 32px;
 }
 
+.left {
+	text-align: left;
+}
+
+.b {
+	font-weight: bold;
+}
+
+.vm {
+	vertical-align: middle;
+}
+
+#system-progress-bar {
+	height: 4px;
+	width: 100%;
+	background-color: navy;
+	position: fixed;
+	top: 76px;
+	#wrong, #right {
+		display: inline-block;
+		height: 100%;
+	}
+	#wrong {
+		background-color: crimson;
+	}
+	#right {
+		background-color: forestgreen;
+	}
+}
+
 @media (min-width:1281px) { 
 	/* hi-res laptops and desktops */ 
 	#content {
@@ -137,20 +167,12 @@ body {
 		padding: 8px 16px;
 	}
 
+	#system-progress-bar {
+		top: 64px;
+	}
+
 	body {
 		padding-top: 64px;
 	}
 
-}
-
-.left {
-	text-align: left;
-}
-
-.b {
-	font-weight: bold;
-}
-
-.vm {
-	vertical-align: middle;
 }

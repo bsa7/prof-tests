@@ -48,10 +48,18 @@ render_question = (data, params) ->
 	question_answered_count = parseInt($('#question-list').data("question-count")) - parseInt($('#question-list').data("question-left"))
 	total_answer_count = parseInt($('#question-list').data("total-answers-count"))
 	right_answer_count = parseInt($('#question-list').data("right-answers-count"))
-	wrong_ansers_count = total_answer_count - right_answer_count
+	wrong_answer_count = total_answer_count - right_answer_count
 	time_for_answers = parseFloat($('#question-list').data("time-for-answers"))
 	question_count = $('#question-list').data('question-count')
-	$("#counter").html("#{question_answered_count}(<p class='ib'>#{wrong_ansers_count}</p> / <p class='ib'>#{right_answer_count}</p>) из #{question_count} вопросов")
+	#$("#counter").html("#{question_answered_count}(<p class='ib'>#{wrong_anwsers_count}</p> / <p class='ib'>#{right_answer_count}</p>) из #{question_count} вопросов")
+#	$("#system-progress-bar > #wrong").css
+#		width: "#{window.getWindowSize().width * wrong_anwsers_count / question_count}px"
+#	$("#system-progress-bar > #right").css
+#		width: "#{window.getWindowSize().width * right_anwsers_count / question_count}px"
+#	window.if_console "wrong width": "#{window.getWindowSize().width * wrong_answer_count / question_count}px", "right width": "#{window.getWindowSize().width * right_answer_count / question_count}px"
+	window.set_style("#system-progress-bar > #wrong", [["width", "#{window.getWindowSize().width * wrong_answer_count / question_count}px"]])
+	window.set_style("#system-progress-bar > #right", [["width", "#{window.getWindowSize().width * right_answer_count / question_count}px"]])
+
 
 #--------------------------------------------------------------------------------------------------
 window.session_identify = ->
