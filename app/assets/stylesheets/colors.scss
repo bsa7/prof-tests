@@ -1,44 +1,354 @@
-.bg1 {
-	background-color: #00bcd4;
+/*Indigo*/
+$palette-color-0:      #000000;
+$palette-color-50:     #E8EAF6;
+$palette-color-100:    #C5CAE9;
+$palette-color-200:    #9FA8DA;
+$palette-color-300:    #7986CB;
+$palette-color-400:    #5C6BC0;
+$palette-color-500:    #3F51B5;
+$palette-color-600:    #3949AB;
+$palette-color-700:    #303F9F;
+$palette-color-800:    #283593;
+$palette-color-900:    #1A237E;
+$palette-color-FFF:    #FFFFFF;
+
+$palette-color-A100:   #8C9EFF;
+$palette-color-A200:   #536DFE;
+$palette-color-A400:   #3D5AFE;
+$palette-color-A700:   #304FFE;
+
+/*Pink*/
+$palette-accent-color-50:  FCE4EC;
+$palette-accent-color-100:  #F8BBD0;
+$palette-accent-color-200:  #F48FB1;
+$palette-accent-color-300:  #F06292;
+$palette-accent-color-400:  #EC407A;
+$palette-accent-color-500:  #E91E63;
+$palette-accent-color-600:  #D81B60;
+$palette-accent-color-700:  #C2185B;
+$palette-accent-color-800:  #AD1457;
+$palette-accent-color-900:  #880E4F;
+$palette-accent-color-A100:  #FF80AB;
+$palette-accent-color-A200:  #FF4081;
+$palette-accent-color-A400:  #F50057;
+$palette-accent-color-A700:  #C51162;
+
+$primary-color-dark:   $palette-color-700;
+$primary-color:        $palette-color-500;
+$primary-color-light:  $palette-color-100;
+$primary-color-text:   $palette-color-FFF;
+
+$accent-color:         #FF4081;
+$primary-text-color:   #212121;
+$secondary-text-color: #727272;
+$divider-color:        #B6B6B6;
+
+@mixin bg-palette-color-500 {
+	background-color: $palette-color-500 !important;
 }
 
-.bg2 {
-	background-color: #00838f;
+@mixin palette-color-500 {
+	color: $palette-color-500 !important;
+}
+
+@mixin bg-palette-color-50 {
+	background-color: $palette-color-50 !important;
+}
+
+@mixin palette-color-50 {
+	color: $palette-color-50 !important;
+}
+
+@mixin bg-palette-color-100 {
+	background-color: $palette-color-100 !important;
+}
+
+@mixin palette-color-100 {
+	color: $palette-color-100 !important;
+}
+
+@mixin bg-palette-color-200 {
+	background-color: $palette-color-200 !important;
+}
+
+@mixin palette-color-200 {
+	color: $palette-color-200 !important;
+}
+
+@mixin bg-palette-color-300 {
+	background-color: $palette-color-300 !important;
+}
+
+@mixin palette-color-300 {
+	color: $palette-color-300 !important;
+}
+
+@mixin bg-palette-color-400 {
+	background-color: $palette-color-400 !important;
+}
+
+@mixin palette-color-400 {
+	color: $palette-color-400 !important;
+}
+
+@mixin bg-palette-color-500 {
+	background-color: $palette-color-500 !important;
+}
+
+@mixin palette-color-500 {
+	color: $palette-color-500 !important;
+}
+
+@mixin bg-palette-color-600 {
+	background-color: $palette-color-600 !important;
+}
+
+@mixin palette-color-600 {
+	color: $palette-color-600 !important;
+}
+
+@mixin bg-palette-color-700 {
+	background-color: $palette-color-700 !important;
+}
+
+@mixin palette-color-700 {
+	color: $palette-color-700 !important;
+}
+
+@mixin bg-palette-color-800 {
+	background-color: $palette-color-800 !important;
+}
+
+@mixin palette-color-800 {
+	color: $palette-color-800 !important;
+}
+
+@mixin bg-palette-color-900 {
+	background-color: $palette-color-900 !important;
+}
+
+@mixin palette-color-900 {
+	color: $palette-color-900 !important;
 }
 
 
-/*.bg3 {
-	background-color: #0097a7;
-}*/
-
-.bg3 {
-	background-color: #fff;
+@mixin bg-primary-color-dark {
+	background-color: $primary-color-dark !important;
 }
 
-.c0 {
-	color: #000 !important;
+@mixin primary-color-dark {
+	color: $primary-color-dark !important;
 }
 
-.c1 {
-	color: #80deea !important;
+@mixin bg-primary-color {
+	background-color: $primary-color !important;
 }
 
-.c2 {
-	color: #4dd0e1 !important;
+@mixin primary-color {
+	color: $primary-color !important;
 }
 
-.c3 {
-	color: #fff !important;
+@mixin bg-primary-color-light {
+	background-color: $primary-color-light !important;
 }
 
-.c4 {
-	color: #000 !important;
+@mixin primary-color-light {
+	color: $primary-color-light !important;
 }
 
-.cred {
-	color: crimson;
+@mixin bg-primary-color-text {
+	background-color: $primary-color-text !important;
 }
 
-.cgreen {
-	color: green;
+@mixin primary-color-text {
+	color: $primary-color-text !important;
+}
+
+@mixin bg-accent-color {
+	background-color: $accent-color !important;
+}
+
+@mixin accent-color {
+	color: $accent-color !important;
+}
+
+@mixin bg-primary-text-color {
+	background-color: $primary-text-color !important;
+}
+
+@mixin primary-text-color {
+	color: $primary-text-color !important;
+}
+
+@mixin bg-secondary-text-color {
+	background-color: $secondary-text-color !important;
+}
+
+@mixin secondary-text-color {
+	color: $secondary-text-color !important;
+}
+
+@mixin bg-divider-color {
+	background-color: $divider-color !important;
+}
+
+@mixin divider-color {
+	color: $divider-color !important;
+}
+
+.bg-palette-color-50 {
+	@include bg-palette-color-50;
+}
+
+.palette-color-50 {
+	@include palette-color-50;
+}
+
+.bg-palette-color-100 {
+	@include bg-palette-color-100;
+}
+
+.palette-color-100 {
+	@include palette-color-100;
+}
+
+.bg-palette-color-200 {
+	@include bg-palette-color-200;
+}
+
+.palette-color-200 {
+	@include palette-color-200;
+}
+
+.bg-palette-color-300 {
+	@include bg-palette-color-300;
+}
+
+.palette-color-300 {
+	@include palette-color-300;
+}
+
+.bg-palette-color-400 {
+	@include bg-palette-color-400;
+}
+
+.palette-color-400 {
+	@include palette-color-400;
+}
+
+.bg-palette-color-500 {
+	@include bg-palette-color-500;
+}
+
+.palette-color-500 {
+	@include palette-color-500;
+}
+
+.bg-palette-color-600 {
+	@include bg-palette-color-600;
+}
+
+.palette-color-600 {
+	@include palette-color-600;
+}
+
+.bg-palette-color-700 {
+	@include bg-palette-color-700;
+}
+
+.palette-color-700 {
+	@include palette-color-700;
+}
+
+.bg-palette-color-800 {
+	@include bg-palette-color-800;
+}
+
+.palette-color-800 {
+	@include palette-color-800;
+}
+
+.bg-palette-color-900 {
+	@include bg-palette-color-900;
+}
+
+.palette-color-900 {
+	@include palette-color-900;
+}
+
+
+.bg-primary-color-dark {
+	@include bg-primary-color-dark;
+}
+
+.primary-color-dark {
+	@include primary-color-dark;
+}
+
+.bg-primary-color {
+	@include bg-primary-color;
+}
+
+.primary-color {
+	@include primary-color;
+}
+
+.bg-primary-color-light {
+	@include bg-primary-color-light;
+}
+
+.primary-color-light {
+	@include primary-color-light;
+}
+
+.bg-primary-color-text {
+	@include bg-primary-color-text;
+}
+
+.primary-color-text {
+	@include primary-color-text;
+}
+
+.bg-accent-color {
+	@include bg-accent-color;
+}
+
+.accent-color {
+	@include accent-color;
+}
+
+.bg-primary-text-color {
+	@include bg-primary-text-color;
+}
+
+.primary-text-color {
+	@include primary-text-color;
+}
+
+.bg-secondary-text-color {
+	@include bg-secondary-text-color;
+}
+
+.secondary-text-color {
+	@include secondary-text-color;
+}
+
+.bg-divider-color {
+	@include bg-divider-color;
+}
+
+.divider-color {
+	@include divider-color;
+}
+
+.bg-forestgreen {
+	background-color: forestgreen;
+}
+
+.bg-crimson {
+	background-color: crimson;
+}
+
+.bg-navy {
+	background-color: navy;
 }

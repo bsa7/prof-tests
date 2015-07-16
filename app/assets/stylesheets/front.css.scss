@@ -1,4 +1,5 @@
 @import "mixings.scss";
+@import "colors.scss";
 
 a * {
 	pointer-events: none;
@@ -25,15 +26,15 @@ a * {
 
 a {
 	text-decoration: none;
-	color: black;
+	@include primary-text-color;
 }
 
 a:hover {
-	color: #444;
+	@include secondary-text-color;
 }
 
 a:visited {
-	color: #111;
+	@include primary-text-color;
 }
 
 *:focus {
@@ -62,7 +63,7 @@ html, body {
 }
 
 .test-type-select:hover {
-	background-color: #eee;
+	@include bg-primary-color-light;
 }
 
 .btn-next {
@@ -70,14 +71,22 @@ html, body {
 	padding: 30px 80px;
 	margin-left: auto;
 	margin-right: auto;
-	background-color: green;
-	color: white;
+	@include bg-accent-color;
+	@include primary-color-text;
 }
 
 .question-card {
 	display: block;
-	@include bg3;
-	padding: 32px;
-	margin-top: 2px;
+	@include bg-primary-color-text;
+	padding: 32px 64px;
 	@include btn;
+	text-align: left;
+	border-bottom: 1px solid $divider-color;
+	&:hover {
+		@include bg-primary-color-light;
+	}
+}
+
+body {
+	@include bg-primary-color-light;
 }

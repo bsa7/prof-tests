@@ -8,6 +8,7 @@ window.document_onclick = (e) ->
 		if $(e.target).data("type") == "answer_variant"
 			question_id = $(e.target).data("question-id")
 			answer_id = $(e.target).data("answer-id")
+			window.status_body "info", HandlebarsTemplates["info"](message: "Ответ принят..."), 0
 			window.get_ajax("/check_answer",
 				client_id: window.session_identify()
 				question_id: question_id
@@ -31,17 +32,18 @@ window.next_question = ->
 #--------------------------------------------------------------------------------------------------
 check_answer = (data, params) ->
 
+	window.close_status()
 	if data.is_right
-		window.status_body "success", "<div class='vm'><div class='center'>Правильный ответ !</div></div>", 1
-		#$("#resume").html("<div class='vm bggreen'><div class='center'>Правильный ответ !</div></div><div class='mt30 btn btn-next'>Далее</div>")			
+		window.status_body "success", HandlebarsTemplates['right_answer'], 3
 		window.next_question()			
 	else
-		#window.dialog "<h2>#{data.question}</h2><h2 class='c1'>Ваш ответ:</h2>#{data.your_answer}<h1 class='cred'>Неправильный ответ.</h1><h2>Правильный ответ:</h2><p class='cgreen'>#{data.right_answer}</p><div class='btn btn-fancy-close'>Закрыть</div>"
-		$("#resume").html("<h2 class='c0'>Ваш ответ:</h2><p class='c1'>#{data.your_answer}</p><h1 class='cred'>Неправильный ответ.</h1><h2>Правильный ответ:</h2><p class='c1'>#{data.right_answer}</p><div class='mt30 btn btn-next'>Далее</div>")
-		$(".test-type-select").remove()
+		window.status_body "error", HandlebarsTemplates['wrong_answer']
+			your_answer: data.your_answer
+			right_answer: data.right_answer
 
 #--------------------------------------------------------------------------------------------------
 render_question = (data, params) ->
+	window.close_status()
 	$("#content").html(data)
 	question_answered_count = parseInt($('#question-list').data("question-count")) - parseInt($('#question-list').data("question-left"))
 	total_answer_count = parseInt($('#question-list').data("total-answers-count"))
@@ -49,7 +51,7 @@ render_question = (data, params) ->
 	wrong_ansers_count = total_answer_count - right_answer_count
 	time_for_answers = parseFloat($('#question-list').data("time-for-answers"))
 	question_count = $('#question-list').data('question-count')
-	$("#counter").html("#{question_answered_count}(<p class='cred ib'>#{wrong_ansers_count}</p> / <p class='cgreen ib'>#{right_answer_count}</p>) из #{question_count} вопросов")
+	$("#counter").html("#{question_answered_count}(<p class='ib'>#{wrong_ansers_count}</p> / <p class='ib'>#{right_answer_count}</p>) из #{question_count} вопросов")
 
 #--------------------------------------------------------------------------------------------------
 window.session_identify = ->
