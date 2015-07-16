@@ -1,12 +1,11 @@
-#system-status-bar
+#system-status-bar.vm
 	- if !params['test_type'] 
 		%h1
 			Тесты 
 	- else
 		%a.ib{href: "/"}
-			%h1.primary-color-text.pr32
-				В начало
-		%h3.ib
+			%span.glyph.glyph-arrow-left.primary-color-text.pr32
+		%h2.ib
 			= "Тест: #{I18n.t params['test_type'].gsub(/-/,'_')}"
 -#	.pull-right
 		- if @session && @session[:client_id]

@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg>
+	<metadata>
+		Created by fatSlon
+	</metadata>
+	<defs>
+		<font id="Slon">
+			<font-face units-per-em="2048"/>
+			<glyph glyph-name="arrow-left"   unicode="&#xf001;" d="M2048 1152v0v-256h-1561.6l716.8 -716.8l-179.2 -179.2l-1024 1024l1024 1024l179.2 -179.2l-716.8 -716.8h1561.6z" />
+		</font>
+	</defs>
+</svg>

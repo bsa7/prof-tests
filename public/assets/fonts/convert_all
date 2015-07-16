@@ -1,0 +1,11 @@
+# before using you must install npm and next modules:
+# sudo npm install -g svg2ttf
+# sudo npm install -g ttf2eot
+# sudo npm install -g ttf2woff
+
+echo -e "convering \e[0;32msvg to ttf...\e[0m"
+svg2ttf glyphs.svg glyphs.ttf
+echo -e "convering \e[0;32mttf to eot...\e[0m"
+ttf2eot glyphs.ttf glyphs.eot
+echo -e "convering \e[0;32mttf to woff...\e[0m"
+ttf2woff glyphs.ttf glyphs.woff
