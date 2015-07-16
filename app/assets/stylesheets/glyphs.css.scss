@@ -24,13 +24,20 @@
 
 .glyph-arrow-left {
 	display: block;
-	width: 26px;
-	height: 26px;
+	height: 48px !important;
+	width: 48px !important;
 }
 
+
+/*
 @media (min-width:1281px) { 
 	.glyph:before {
-		font-size: 24px;
+	}
+
+	.glyph-arrow-left {
+		height: 24px;
+		width: 24px;
 	}
 
 }
+*/

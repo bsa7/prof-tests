@@ -103,7 +103,7 @@ body {
 }
 
 #system-status-bar {
-	height: 128px;
+	/*height: 128px;*/
 	@include bg-primary-color-dark;
 	display: block;
 	position: fixed;
@@ -111,10 +111,19 @@ body {
 	width: 100%;
 	z-index: 10;
 	padding: 16px 72px;
+	min-height: 76px;
 	@include primary-color-text;
 	-webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.76);
 	-moz-box-shadow:0px 0px 1px 0px rgba(0, 0, 0, 0.76);
 	box-shadow:0px 0px 1px 0px rgba(0, 0, 0, 0.76);
+}
+
+#homelink {
+	display: inline-block;
+	width: 56px;
+	height: 60px;
+	padding: 4px;
+	margin-right: 32px;
 }
 
 @media (min-width:1281px) { 
@@ -124,7 +133,7 @@ body {
 	}
 
 	#system-status-bar {
-		height: 64px;
+		/*height: 64px;*/
 		padding: 8px 16px;
 	}
 
@@ -140,4 +149,8 @@ body {
 
 .b {
 	font-weight: bold;
+}
+
+.vm {
+	vertical-align: middle;
 }
