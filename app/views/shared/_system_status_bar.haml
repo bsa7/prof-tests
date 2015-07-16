@@ -1,12 +1,15 @@
 #system-status-bar.vm
 	- if !params['test_type'] 
-		%h1
-			Тесты 
+		%div.ib
+			%h1
+				Тесты 
 	- else
-		%a.ib{href: "/"}
-			%span.glyph.glyph-arrow-left.primary-color-text.pr32
-		%h1.ib
-			= "Тест: #{I18n.t params['test_type'].gsub(/-/,'_')}"
+		%div.ib
+			%a{href: "/"}
+				%span.glyph.glyph-arrow-left.primary-color-text.pr32
+		%div.ib
+			%h1
+				= "Тест: #{I18n.t params['test_type'].gsub(/-/,'_')}"
 	.pull-right
 		- if @session && @session[:client_id]
 			%a{href: "client_#{@session.client_id}"}
