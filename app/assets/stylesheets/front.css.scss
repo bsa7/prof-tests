@@ -141,9 +141,10 @@ body {
 #system-progress-bar {
 	height: 4px;
 	width: 100%;
-	background-color: navy;
+	/*background-color: navy;*/
 	position: fixed;
-	top: 76px;
+	top: 77px;
+	z-index: 11;
 	#wrong, #right {
 		display: inline-block;
 		height: 100%;
@@ -168,7 +169,7 @@ body {
 	}
 
 	#system-progress-bar {
-		top: 64px;
+		top: 65px;
 	}
 
 	body {
