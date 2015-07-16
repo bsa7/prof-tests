@@ -11,7 +11,7 @@
 
 .glyph:before {
 	font-family: 'webglyphs' !important; 
-	font-size: 44px;
+	font-size: 88px;
 	position: relative;
 	display: inline-block;
 	dominant-baseline: text-before-edge;
@@ -20,4 +20,10 @@
 
 .glyph-arrow-left:before {
 	content: "\F001";
+}
+
+@media (min-width:1281px) { 
+	.glyph:before {
+		font-size: 44px;
+	}
 }
