@@ -43,14 +43,6 @@ $primary-text-color:   #212121;
 $secondary-text-color: #727272;
 $divider-color:        #B6B6B6;
 
-@mixin bg-palette-color-500 {
-	background-color: $palette-color-500 !important;
-}
-
-@mixin palette-color-500 {
-	color: $palette-color-500 !important;
-}
-
 @mixin bg-palette-color-50 {
 	background-color: $palette-color-50 !important;
 }
@@ -130,7 +122,6 @@ $divider-color:        #B6B6B6;
 @mixin palette-color-900 {
 	color: $palette-color-900 !important;
 }
-
 
 @mixin bg-primary-color-dark {
 	background-color: $primary-color-dark !important;

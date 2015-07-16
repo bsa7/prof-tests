@@ -1,8 +1,11 @@
-.bg2.center
-	%h2.c2
-		На сегодня есть два вида тестов, выбирай:
+.bg-primary-color-dark.primary-color-text
+	.question-header
+		%h2
+			На сегодня есть два вида тестов, выбирай:
 
-	%a.bg3.b1.c1.test-type-select.br5p.p30.mt2{href: "/pressure-vessels"}
-		1. Сосуды, работающие под давлением
-	%a.bg3.b1.c1.test-type-select.br5p.p30.mt2{href: "/pipelines-of-steam-and-hot-water"}
-		2. Трубопроводы пара и горячей воды
+	%a.question-card{href: "/pressure-vessels"}
+		%div
+			1. Сосуды, работающие под давлением
+	%a.question-card{href: "/pipelines-of-steam-and-hot-water"}
+		%div
+			2. Трубопроводы пара и горячей воды
