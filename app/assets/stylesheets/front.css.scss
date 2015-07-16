@@ -95,7 +95,7 @@ html, body {
 
 body {
 	@include bg-primary-color-light;
-	padding-top: 64px;
+	padding-top: 128px;
 }
 
 .header {
@@ -127,5 +127,10 @@ body {
 		height: 64px;
 		padding: 8px 72px;
 	}
+
+	body {
+		padding-top: 64px;
+	}
+
 }
 
