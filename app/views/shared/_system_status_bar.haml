@@ -4,9 +4,8 @@
 			%h1
 				Тесты 
 	- else
-		%div.ib
-			%a{href: "/"}
-				%span.glyph.glyph-arrow-left.primary-color-text.pr32
+		%a.ib.p4.mr32{href: "/"}
+			%span.glyph.glyph-arrow-left.primary-color-text
 		%div.ib
 			%h1
 				= "Тест: #{I18n.t params['test_type'].gsub(/-/,'_')}"
