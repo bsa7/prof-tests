@@ -9,9 +9,8 @@
 		%div.ib
 			%h1
 				= "Тест: #{I18n.t params['test_type'].gsub(/-/,'_')}"
-	.pull-right.ib
-		%a#more{"data-ajax": true}
-			%span.glyph.glyph-more-vert.primary-color-text
+	%a.pull-right.ib#more{"data-ajax": true}
+		%span.glyph.glyph-more-vert.primary-color-text
 	-#.pull-right
 		- if @session && @session[:client_id]
 			%a{href: "client_#{@session.client_id}"}

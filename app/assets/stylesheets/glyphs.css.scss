@@ -26,17 +26,15 @@
 	content: "\F002";
 }
 
-.glyph-more-vert {
-	text-align: center;
-}
-
-
 .glyph-arrow-left, .glyph-more-vert {
 	display: block;
 	height: 48px !important;
 	width: 48px !important;
 }
 
+.glyph-more-vert {
+	text-align: center;
+}
 
 /*
 @media (min-width:1281px) { 
