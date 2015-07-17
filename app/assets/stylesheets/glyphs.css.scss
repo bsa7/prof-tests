@@ -22,7 +22,16 @@
 	content: "\F001";
 }
 
-.glyph-arrow-left {
+.glyph-more-vert:before {
+	content: "\F002";
+}
+
+.glyph-more-vert {
+	text-align: center;
+}
+
+
+.glyph-arrow-left, .glyph-more-vert {
 	display: block;
 	height: 48px !important;
 	width: 48px !important;

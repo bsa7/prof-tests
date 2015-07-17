@@ -9,8 +9,9 @@ window.document_onclick = (e) ->
 			question_id = $(e.target).data("question-id")
 			answer_id = $(e.target).data("answer-id")
 			window.status_body "info", HandlebarsTemplates["info"](message: "Ответ принят..."), 0
+			#сообщаем серверу id клиента (params["client_id"]), а id сессии известен и так, как params["authenticity_token"]
 			window.get_ajax("/check_answer",
-				client_id: window.session_identify()
+				client_id: window.client_identify()
 				question_id: question_id
 				answer_id: answer_id
 				question_list: $("#question-list").data("question-list")
@@ -25,7 +26,7 @@ window.document_onclick = (e) ->
 window.next_question = ->
 	window.get_ajax(window.location.pathname, 
 		layout: false
-		session_id: window.session_identify()
+		client_id: window.client_identify()
 		question_list: $("#question-list").data("question-list")
 	, render_question)
 
@@ -62,7 +63,7 @@ render_question = (data, params) ->
 
 
 #--------------------------------------------------------------------------------------------------
-window.session_identify = ->
+window.client_identify = ->
 	if !window.varCache("cliend_id").v
 		window.varCache("cliend_id", window.makeid(133))
 	window.varCache("cliend_id").v
@@ -73,4 +74,4 @@ $ ->
 
 #--------------------------------------------------------------------------------------------------
 window.front_doc_ready = ->
-	window.if_console(window.session_identify())
+	window.if_console window.client_identify()
