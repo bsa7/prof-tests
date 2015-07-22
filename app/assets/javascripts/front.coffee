@@ -35,7 +35,7 @@ check_answer = (data, params) ->
 
 	window.close_status()
 	if data.is_right
-		window.status_body "success", HandlebarsTemplates['right_answer'], 3
+		window.status_body "success", HandlebarsTemplates['right_answer'], 1
 		window.next_question()			
 	else
 		window.status_body "error", HandlebarsTemplates['wrong_answer']

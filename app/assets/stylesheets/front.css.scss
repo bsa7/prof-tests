@@ -102,6 +102,10 @@ body {
 	/*.bg1.p30.c1.sh2*/
 }
 
+#system-status-bar > * {
+	vertical-align: middle;
+}
+
 #system-status-bar {
 	/*height: 128px;*/
 	@include bg-primary-color-dark;
@@ -175,6 +179,11 @@ body {
 	#system-status-bar {
 		height: 75px;
 		padding: 8px 0px 8px 16px;
+		a#homelink, a.ib {
+			display: inline-block;
+			width: 32px;
+			height: 32px;
+		}
 	}
 
 	#system-progress-bar {
