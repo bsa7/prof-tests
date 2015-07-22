@@ -98,16 +98,7 @@ body {
 	padding-top: 152px;
 }
 
-.header {
-	/*.bg1.p30.c1.sh2*/
-}
-
-#system-status-bar > * {
-	vertical-align: middle;
-}
-
 #system-status-bar {
-	/*height: 128px;*/
 	@include bg-primary-color-dark;
 	display: block;
 	position: fixed;
@@ -124,22 +115,10 @@ body {
 
 #homelink {
 	display: inline-block;
-	width: 56px;
-	height: 60px;
+	// width: 56px;
+	// height: 60px;
 	padding: 4px;
 	margin-right: 32px;
-}
-
-.left {
-	text-align: left;
-}
-
-.b {
-	font-weight: bold;
-}
-
-.vm {
-	vertical-align: middle;
 }
 
 #system-progress-bar {
@@ -179,11 +158,11 @@ body {
 	#system-status-bar {
 		height: 75px;
 		padding: 8px 0px 8px 16px;
-		a#homelink, a.ib {
-			display: inline-block;
-			width: 32px;
-			height: 32px;
-		}
+		// a#homelink, a.ib {
+		// 	display: inline-block;
+		// 	width: 32px;
+		// 	height: 32px;
+		// }
 	}
 
 	#system-progress-bar {
