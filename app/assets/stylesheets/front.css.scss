@@ -111,7 +111,7 @@ body {
 	width: 100%;
 	z-index: 10;
 	padding: 16px 0px 16px 72px;
-	min-height: 112px;
+	height: 152px;
 	@include primary-color-text;
 	-webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.76);
 	-moz-box-shadow:0px 0px 1px 0px rgba(0, 0, 0, 0.76);
@@ -143,11 +143,13 @@ body {
 	width: 100%;
 	/*background-color: navy;*/
 	position: fixed;
-	top: 77px;
+	top: 152px;
 	z-index: 11;
 	#wrong, #right {
 		display: inline-block;
 		height: 100%;
+		position: absolute;
+		top: 0px;
 	}
 	#wrong {
 		background-color: crimson;
@@ -155,6 +157,9 @@ body {
 	#right {
 		background-color: forestgreen;
 	}
+	-webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.76);
+	-moz-box-shadow:0px 0px 1px 0px rgba(0, 0, 0, 0.76);
+	box-shadow:0px 0px 1px 0px rgba(0, 0, 0, 0.76);
 }
 
 #more {
@@ -168,12 +173,12 @@ body {
 	}
 
 	#system-status-bar {
-		height: 64px;
+		height: 75px;
 		padding: 8px 0px 8px 16px;
 	}
 
 	#system-progress-bar {
-		top: 65px;
+		top: 75px;
 	}
 
 	body {

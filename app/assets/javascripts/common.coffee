@@ -524,16 +524,20 @@ window.read_form_values = ->
 window.set_style = (selector, rules) ->
 #	window.if_console "window.set_style = (selector, rules) ->"
 
-	css_selector = "cs#{selector.replace(/[\.\,#]/, '_')}"
-	$("style##{css_selector}").remove()
+	css_selector = "cs#{selector.replace(/[\.\,#]/, '-')}"
+#	window.if_console $("style##{css_selector}")
+	#$("style##{css_selector}").remove()
 	sheet = document.createElement("style")
 	sheet.id = css_selector
 	style_str = "#{selector} {<rules>}"
 	rules_str = ""
-	for rule in rules
-		rules_str += "#{rule[0]}: #{rule[1]};"
+	for key of rules
+		rules_str += "#{key}: #{rules[key]};"
 	sheet.innerHTML = style_str.replace("<rules>", rules_str);
-	document.body.appendChild sheet
+	if !document.getElementById(css_selector)
+		document.body.appendChild sheet
+	else
+		document.getElementById(css_selector).innerHTML = sheet.innerHTML
 
 #--------------------------------------------------------------------------------------------------
 window.popup = (html) ->

@@ -19,7 +19,7 @@ window.status_body = (status, html, seconds = null) ->
 		html: html
 		state: state
 	
-	window.if_console snackbar_html
+#	window.if_console snackbar_html
 	
 	$("#snackbar").remove()
 
@@ -89,7 +89,7 @@ window.status_body = (status, html, seconds = null) ->
 ##-- close a success, error message by click ---------------------------------------------------------------------------
 $(document).click (e)->
 	id = window.get_attr(e.target, "id", 3)
-	window.if_console id: id, "e.target": e.target
+#	window.if_console id: id, "e.target": e.target
 	if /snackbar/.test(id)
 		$("#snackbar").remove()
 
