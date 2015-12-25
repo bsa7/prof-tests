@@ -493,10 +493,7 @@ window.store_form_values = ->
 
 #--------------------------------------------------------------------------------------------------
 window.restore_form_values = ->
-#	window.if_console "window.restore_form_values = ->"
 
-#	if !window.need_run("window.restore_form_values", 0.04) #25 fps
-#		return
 	cache = window.varCache("sv#{window.current_location()}")
 	if cache && !cache.value || !cache
 		window.store_form_values()
@@ -509,11 +506,7 @@ window.restore_form_values = ->
 					document.getElementById(id).checked = value
 			else if /^(select|input|textarea)/.test(key) || (/^div/.test(key) && /slider/.test(key))
 				if $(key).length > 0
-#					window.if_console "stored $(#{key}).val(\"#{value}\")"
 					$(key).val(value)
-#					window.if_console "check: $(\"#{key}\").val() = ": $(key).val()
-#					if /select/.test key
-#						window.if_console document.getElementById(key.replace(/^[^#]+#/, '')).options.length;
 
 #--------------------------------------------------------------------------------------------------
 window.read_form_values = ->

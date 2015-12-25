@@ -105,7 +105,7 @@ body {
 	top: 0px;
 	width: 100%;
 	z-index: 10;
-	padding: 16px 0px 16px 72px;
+	padding: 16px;
 	height: 152px;
 	@include primary-color-text;
 	-webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.76);
@@ -115,8 +115,6 @@ body {
 
 #homelink {
 	display: inline-block;
-	// width: 56px;
-	// height: 60px;
 	padding: 4px;
 	margin-right: 32px;
 }
@@ -158,11 +156,6 @@ body {
 	#system-status-bar {
 		height: 75px;
 		padding: 8px 0px 8px 16px;
-		// a#homelink, a.ib {
-		// 	display: inline-block;
-		// 	width: 32px;
-		// 	height: 32px;
-		// }
 	}
 
 	#system-progress-bar {

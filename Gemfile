@@ -71,6 +71,6 @@ gem 'colorize'
 #gem 'bootstrap-wysihtml5-rails', '0.3.1.24'
 #gem 'rails_admin' ШНЯГА
 
-gem 'rmagick', '2.13.2'
+gem 'rmagick', '2.15.4'
 #gem 'ruby-opencv'
 #gem 'google_drive'

@@ -8,21 +8,22 @@ task :load_tests => :environment do
 		next if entry[/^\./]
 		available_test_list << entry
 	end
-	print "Очистка предыдущих данных"
+#	print "Очистка предыдущих данных"
 
-	Rake::Task["db:drop"].invoke
-	Rake::Task["db:create"].invoke
-	Rake::Task["db:migrate"].invoke
+#	Rake::Task["db:drop"].invoke
+#	Rake::Task["db:create"].invoke
+#	Rake::Task["db:migrate"].invoke
 
 	print "Доступные тесты: \n".yellow
 	ActiveRecord::Base.transaction do
 		available_test_list.each do |test_dir|
 			dir = "#{test_source_dir}/#{test_dir}"
 			print "#{dir}\n"
-			existing_test_names = TestName.where(load_dir: test_dir)
+			e_hash = {load_dir: test_dir, name: test_dir}
+			existing_test_names = TestName.where(e_hash)
 			if existing_test_names.size == 0
-				test_names = TestName.new
-				test_names.update_attributes!(load_dir: test_dir, name: test_dir)
+				test_names = TestName.new(e_hash)
+				test_names.save!
 				test_name_id = test_names.id
 			else
 				test_name_id = existing_test_names.first.id
@@ -31,25 +32,30 @@ task :load_tests => :environment do
 			questions = []
 			question_file.each_line do |line|
 				if line[/^\d+\.\s/]
-					questions << {text: line.gsub(/^\d+\.\s*/,'').chomp}
+					questions << {text: line.gsub(/^\d+\.\s*/,'').chomp, }
 				else
 					answer_variant_key = line[/^[А-ЯЁ]/]
 					questions.last[answer_variant_key] = line.gsub(/^[А-ЯЁ]\)\s*/,'')
+					questions.last[:right_answer] = "А"
 				end
 			end
 			print "Доступно вопросов: #{questions.size}".green
-			answers_file = File.open("#{dir}/answers.txt").read
-			question_index = 0
-			answers_file.each_line do |line|
-				questions[question_index][:right_answer] = line.chomp
-				question_index += 1
-			end
+			#answers_file = File.open("#{dir}/answers.txt").read
+#			question_index = 0
+#			answers_file.each_line do |line|
+#				question_index += 1
+#			end
 			questions.each_with_index do |question, index|
 				#Utils.d question: question[:text]
 				print "Вопрос №#{index}: #{question[:text]} - ".yellow
 				print "записан\n".green
-				question_rec = Question.new(text: question[:text], test_name_id: test_name_id)
-				question_rec.save!
+				q_hash = {text: question[:text], test_name_id: test_name_id}
+				if Question.where(q_hash).size == 0
+					question_rec = Question.new(q_hash)
+					question_rec.save!
+				else
+					next
+				end
 				question_id = question_rec.id
 
 				question.keys.each do |key|
