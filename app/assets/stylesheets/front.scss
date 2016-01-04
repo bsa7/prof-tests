@@ -2010,10 +2010,13 @@ a[data-ajax="search"].activated {
 	@include btn;
 	text-align: left;
 	border-bottom: 1px solid $divider-color;
-	&:hover {
-		@include bg-primary-color-light;
-		@include primary-color-dark;
-	}
+}
+.question-card:hover {
+	@include bg-primary-color-light;
+}
+
+.question-card:hover div {
+	@include primary-color-dark;
 }
 
 .test-type-select {
