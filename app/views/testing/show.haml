@@ -3,10 +3,10 @@
 		%h2
 			= @question[:text]
 	#resume
-	- @question[:answers].keys.shuffle.each do |answer_key|
-		%a.question-card{"data-ajax" => 1, "data-type" => :answer_variant, "data-question-id" => @question[:id], "data-answer-id" => answer_key}
-			%div
-				= @question[:answers][answer_key]
+- @question[:answers].keys.shuffle.each do |answer_key|
+	%a.question-card{"data-ajax" => 1, "data-type" => :answer_variant, "data-question-id" => @question[:id], "data-answer-id" => answer_key}
+		%div
+			= @question[:answers][answer_key].html_safe
 #question-list{"data-question-list" => (@question[:list] -= [@question[:id]]).join(','),
 	"data-time" => Time.now,
 	"data-question-count" => @question[:count],

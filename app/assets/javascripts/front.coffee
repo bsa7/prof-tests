@@ -21,6 +21,15 @@ window.document_onclick = (e) ->
 		$(".fancybox-overlay").remove()
 	if /btn-next/.test(e.target.className)
 		window.next_question()
+	if /search/.test(e.target.getAttribute('data-ajax'))
+		if /black/.test(e.target.className)
+			e.target.className = e.target.className.replace(' black', '')
+			e.target.parentNode.outerHTML = e.target.parentNode.outerHTML.replace(/<input[^>]+>/, '')
+		else
+			input_element = document.createElement('input')
+			input_element.className = 'pull-right search'
+			e.target.className = e.target.className + ' black'
+			e.target.outerHTML = input_element.outerHTML + e.target.outerHTML
 
 #--------------------------------------------------------------------------------------------------
 window.next_question = ->
