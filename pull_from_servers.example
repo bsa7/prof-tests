@@ -1,3 +1,6 @@
+#!/bin/bash
 echo ""
+./update_repo_files "$1"
 echo -e "\e[0;32m pull from github server\e[0m"
 git pull github master
+echo "its all!"

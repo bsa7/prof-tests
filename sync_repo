@@ -1,17 +1,4 @@
 #!/bin/bash
-git add -A
-git add .
-git add --all
-git add -u .
-if [ "$1" != "" ]; then
-  git commit -m "$1"
-else
-  git commit -a
-fi
-git pull sloninfobox master
-git pull u116 master
-git pull github master
-git push sloninfobox master
-git push u116 master
-git push github master
-echo "its all!"
+./pull_from_servers "$1"
+./push_to_servers "$1"
+

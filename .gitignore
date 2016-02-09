@@ -24,5 +24,6 @@ config/puma.rb
 config/secrets.yml
 dopush
 puma_tests_restart
+puma_dev_restart
 push_to_servers
 pull_from_servers
