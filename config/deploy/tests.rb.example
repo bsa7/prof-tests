@@ -1,0 +1,7 @@
+app_name = "appname"
+set :stage, app_name
+set :rails_env, app_name
+role :app, %w{username@x.x.x.x:port_number}
+role :web, %w{username@x.x.x.x:port_number}
+role :db, %w{username@x.x.x.x:port_number}
+server 'x.x.x.x:port_number', user: 'username', roles: %w{web app db}

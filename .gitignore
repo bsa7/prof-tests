@@ -17,6 +17,7 @@
 /tmp
 config/deploy/tests.rb
 config/environments/tests.rb
+config/environments/development.rb
 config/initializers/devise.rb
 config/database.yml
 config/deploy.rb
