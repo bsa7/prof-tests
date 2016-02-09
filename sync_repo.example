@@ -1,0 +1,13 @@
+#!/bin/bash
+git add -A
+git add .
+git add --all
+git add -u .
+if [ "$1" != "" ]; then
+  git commit -m "$1"
+else
+  git commit -a
+fi
+git pull github master
+git push github master
+echo "its all!"

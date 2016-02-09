@@ -1,3 +1,0 @@
-kill -9 `cat /home/slon/projects/tests/shared/tmp/pids/puma.pid`
-rm -f /home/slon/projects/tests/shared/tmp/sockets/*.*
-RAILS_ENV=tests puma -d -b "unix:///home/slon/projects/tests/shared/tmp/sockets/puma.sock" --control "unix:///home/slon/projects/tests/shared/tmp/sockets/pumactl.sock" --control-token f32e4fi32r4tf3e4th3t2r4o3t2e434rm23a4pl324tot324pro234trw34sra34drs4o4d

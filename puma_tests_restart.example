@@ -1,0 +1,6 @@
+#automatic restart on production (RAILS_ENV=storename) server locally
+
+cd /home/username/projects/storename/current
+kill -9 `cat /home/username/projects/storename/shared/tmp/pids/puma.pid`
+rm -f /home/username/projects/storename/shared/tmp/sockets/*.*
+RAILS_ENV=storename puma -d -b "unix:///home/username/projects/storename/shared/tmp/sockets/puma.sock" --control "unix:///home/username/projects/storename/shared/tmp/sockets/pumactl.sock" --control-token aaaaaaaaaabababatabt2aboatba4babma3b4pab2btatb2abrab3abra34arb3abrb4a4b

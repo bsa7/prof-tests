@@ -1,0 +1,7 @@
+# script for auto push to the remotes
+
+git add .
+git add --all
+git commit -a
+echo -e "\e[0;32m push to github\e[0m"
+git push github master

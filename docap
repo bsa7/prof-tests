@@ -1,14 +1,6 @@
+#deploy to production server script
 #!/bin/bash
-git add -A
-git add .
-git add --all
-git add -u .
-git commit -m "$1"
-#git pull u116 master
-#git push u116 master
-git pull sloninfobox master
-git push sloninfobox master
-
+./sync_repo "$1"
 echo -e "\e[0;33m==============================================================================================\e[0m"
 echo -e "\e[0;32m start deploy to tests\e[0m"
 echo -e "\e[0;33m==============================================================================================\e[0m"

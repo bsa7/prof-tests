@@ -1,7 +1,0 @@
-git add .
-git add --all
-git commit -a
-echo -e "\e[0;32m push to SlonInfobox server\e[0m"
-git push sloninfobox master
-#echo -e "\e[0;32m push to u1-16 server\e[0m"
-#git push u116 master
