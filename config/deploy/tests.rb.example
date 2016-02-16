@@ -1,7 +1,11 @@
-app_name = "appname"
+app_name = 'tests'
+server = 'x.x.x.x:nnn'
+user_name = 'slon'
+ssh_access_string = "#{user_name}@#{server}"
 set :stage, app_name
 set :rails_env, app_name
-role :app, %w{username@x.x.x.x:port_number}
-role :web, %w{username@x.x.x.x:port_number}
-role :db, %w{username@x.x.x.x:port_number}
-server 'x.x.x.x:port_number', user: 'username', roles: %w{web app db}
+
+role :app, [ssh_access_string]
+role :web, [ssh_access_string]
+role :db, [ssh_access_string]
+server server, user: user_name, roles: %w{web app db}
