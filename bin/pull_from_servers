@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "pull. msg: $1"
+./bin/update_repo_files "$1"
+servers=( `cat repo_servers` )
+for server in "${servers[@]}"
+do
+  echo -e "\e[0;32m pull from $server server\e[0m"
+  git pull $server master
+done
