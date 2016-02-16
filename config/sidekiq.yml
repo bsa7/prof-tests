@@ -1,0 +1,7 @@
+---
+:pidfile: /tmp/shared/pids/sidekiq_tests.pid
+:logfile: log/sidekiq.log
+:queues:
+  - [tests_queue, 1]
+development:
+  :concurrency: 1
