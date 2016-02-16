@@ -12,7 +12,7 @@ namespace :deploy do
           with rails_env: fetch(:rails_env) do
             execute 'bin/rake assets:precompile'
             execute 'rm -f public/assets.7z'
-            execute "cd public && 7z a assets.7z assets && cd .."
+            execute 'cd public && 7z a assets.7z assets && cd ..'
             execute 'rm -rf public/assets'
           end
         end
