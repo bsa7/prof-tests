@@ -7,7 +7,10 @@ function prepare_files()
   rm -rf tmp/cache
   mkdir -p $1/pids
   mkdir -p $1/sockets
-  kill -9 `cat $1/pids/$2.pid`
+  if [ -f $1/pids/$2.pid ]
+  then
+    kill -9 `cat $1/pids/$2.pid`
+  fi
   rm -f $1/sockets/$2.sock
 }
 
