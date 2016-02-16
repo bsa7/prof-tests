@@ -1,0 +1,6 @@
+#!/bin/bash
+# apply gitignore changes
+echo `./bin/app_name`
+git rm -r --cached .
+git add .
+git status

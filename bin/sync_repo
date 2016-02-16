@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "sync_repo. msg: $1"
+./bin/pull_from_servers "$1"
+./bin/push_to_servers "$1"
+

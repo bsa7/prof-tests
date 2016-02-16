@@ -1,6 +1,0 @@
-#!/bin/bash
-echo ""
-./update_repo_files "$1"
-echo -e "\e[0;32m push to github\e[0m"
-git push github master
-echo "its all!"

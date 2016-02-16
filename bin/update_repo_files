@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "Update local repo files"
+echo "Update local repo files. msg: $1"
 git add -A
 git add .
 git add --all

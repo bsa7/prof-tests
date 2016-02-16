@@ -1,0 +1,11 @@
+#!/bin/bash
+#deploy to production server script
+echo "cap. msg: $1"
+app_name=`./bin/app_name`
+env_production=$app_name
+
+echo -e "=============================================================================================="
+echo -e " start deploy to \e[0;32m$app_name\033[0m production server (stage: $env_production)"
+echo -e "=============================================================================================="
+./bin/sync_repo "$1"
+RAILS_ENV=$env_production cap $app_name deploy --trace

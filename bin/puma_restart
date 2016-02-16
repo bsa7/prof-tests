@@ -1,0 +1,30 @@
+#!/bin/bash
+app_name=${PWD##*/}
+env=`cat env`
+
+function prepare_files()
+{
+  rm -r tmp/cache
+  mkdir -p $1/pids
+  mkdir -p $1/sockets
+  kill -9 `cat $1/pids/$2.pid`
+  rm -f $1/sockets/$2.sock
+}
+
+if [ $env == "development" ]
+then
+  echo -e "Puma restart. Environment: \e[0;32m$env\033[0m, application: \e[0;32m$app_name\033[0m"
+  tmp_path="/tmp/shared"
+  cd ~/projects/$app_name
+  $(prepare_files $tmp_path $app_name)
+#  RAILS_ENV=$env puma --debug
+else
+  current_dir=$app_name
+  app_name=`dirname $(pwd) | grep -oh -P '[^\/]+$'`
+  echo -e "Puma restart. Environment: \e[0;32m$env\033[0m, application: \e[0;32m$app_name\033[0m"
+  tmp_path=`dirname ~/projects/$app_name/shared/tmp/.`
+  cd ~/projects/$app_name/$current_dir
+  $(prepare_files $tmp_path $app_name)
+#  RAILS_ENV=$env puma -d -b "unix://$tmp_path/sockets/$app_name.sock" --control "unix://$tmp_path/sockets/$app_namectl.sock" --control-token `cat token_file`
+fi
+RAILS_ENV=$env puma --debug -C config/puma.rb

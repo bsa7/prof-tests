@@ -1,4 +1,0 @@
-#!/bin/bash
-./pull_from_servers "$1"
-./push_to_servers "$1"
-

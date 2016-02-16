@@ -1,7 +1,0 @@
-cd /home/username/projects/appname
-rm -r tmp/cache
-mkdir -p /tmp/shared/pids
-mkdir -p /tmp/shared/sockets
-kill -9 `cat /tmp/shared/pids/appname.pid`
-rm -f /tmp/shared/sockets/appname.sock
-RAILS_ENV=`cat env` puma --debug
