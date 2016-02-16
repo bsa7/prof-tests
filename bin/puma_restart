@@ -4,7 +4,7 @@ env=`cat env`
 
 function prepare_files()
 {
-  rm -r tmp/cache
+  rm -rf tmp/cache
   mkdir -p $1/pids
   mkdir -p $1/sockets
   kill -9 `cat $1/pids/$2.pid`
