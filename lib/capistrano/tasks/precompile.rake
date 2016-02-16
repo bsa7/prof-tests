@@ -20,7 +20,8 @@ namespace :deploy do
         within release_path do
           with rails_env: fetch(:rails_env) do
             old_manifest_path = "#{shared_path}/public/assets/manifest*"
-            execute :rm, old_manifest_path if test "[ -f #{old_manifest_path} ]"
+            execute "rm -rf #{old_manifest_path}"
+#            execute :rm, old_manifest_path if test "[ -f #{old_manifest_path} ]"
             upload!('./public/assets.7z', "#{shared_path}/public/assets.7z", recursive: false)
           end
         end
