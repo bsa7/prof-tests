@@ -1,0 +1,6 @@
+<div class="p32">
+	<h2><b>Ваш ответ:</b> {{your_answer}}</h2>
+	<h1 class="mv16 b">Неправильный ответ!</h1>
+	<h2><b>Правильный ответ:</b> {{right_answer}}</h2>
+	<div class='mt32 mb32 btn btn-next'>Далее</div>
+</div>
