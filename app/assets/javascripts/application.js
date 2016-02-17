@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require jquery-2.1.1.min
-//= require handlebars.runtime-v3.0.0
+//= require handlebars.runtime-v4.0.5
 //= no require lz-string.min
 //= require_tree ./templates
 //= no require styling

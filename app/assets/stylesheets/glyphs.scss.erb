@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'webglyphs';
-	src: url('/assets/fonts/glyphs.eot');
-	src: url('/assets/fonts/glyphs.eot?#iefix') format('embedded-opentype'),
-	     url('/assets/fonts/glyphs.woff') format('woff'),
-	     url('/assets/fonts/glyphs.ttf') format('truetype'),
-	     url('/assets/fonts/glyphs.svg#webglyphs') format('svg');
+	src: url('<%= asset_url "glyphs.eot" %>');
+	src: url('<%= asset_url "glyphs.eot" %>?#iefix') format('embedded-opentype'),
+	     url('<%= asset_url "glyphs.woff" %>') format('woff'),
+	     url('<%= asset_url "glyphs.ttf" %>') format('truetype'),
+	     url('<%= asset_url "glyphs.svg" %>#webglyphs') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -25,12 +25,6 @@
 .glyph-more-vert:before {
 	content: "\F002";
 }
-
-// .glyph-arrow-left, .glyph-more-vert {
-// 	display: block;
-// 	height: 48px !important;
-// 	width: 48px !important;
-// }
 
 .glyph-more-vert {
 	text-align: center;
