@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -13,71 +12,70 @@
 
 ActiveRecord::Schema.define(version: 20150703020900) do
 
-  create_table "answer_variants", force: :cascade do |t|
-    t.string   "answer_id",   limit: 255
-    t.integer  "question_id", limit: 4
-    t.text     "text",        limit: 65535
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "answer_variants", id: :serial, force: :cascade do |t|
+    t.string "answer_id"
+    t.integer "question_id"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_answer_variants_on_question_id"
   end
 
-  add_index "answer_variants", ["question_id"], name: "index_answer_variants_on_question_id", using: :btree
-
-  create_table "client_answers", force: :cascade do |t|
-    t.string   "client_shortcut_id",  limit: 255
-    t.string   "session_shortcut_id", limit: 255
-    t.integer  "question_id",         limit: 4
-    t.string   "answer_id",           limit: 255
-    t.boolean  "is_right",            limit: 1
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+  create_table "client_answers", id: :serial, force: :cascade do |t|
+    t.string "client_shortcut_id"
+    t.string "session_shortcut_id"
+    t.integer "question_id"
+    t.string "answer_id"
+    t.boolean "is_right"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_client_answers_on_question_id"
   end
 
-  add_index "client_answers", ["question_id"], name: "index_client_answers_on_question_id", using: :btree
-
-  create_table "client_shortcuts", force: :cascade do |t|
-    t.string   "client_id",  limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.string   "ip",         limit: 255
+  create_table "client_shortcuts", id: :serial, force: :cascade do |t|
+    t.string "client_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "ip"
   end
 
-  create_table "clients", force: :cascade do |t|
-    t.string   "client_id",  limit: 255
-    t.string   "nick",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+  create_table "clients", id: :serial, force: :cascade do |t|
+    t.string "client_id"
+    t.string "nick"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "questions", force: :cascade do |t|
-    t.text     "text",         limit: 65535
-    t.integer  "test_name_id", limit: 4
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+  create_table "questions", id: :serial, force: :cascade do |t|
+    t.text "text"
+    t.integer "test_name_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["test_name_id"], name: "index_questions_on_test_name_id"
   end
 
-  add_index "questions", ["test_name_id"], name: "index_questions_on_test_name_id", using: :btree
-
-  create_table "right_answers", force: :cascade do |t|
-    t.string   "answer_id",   limit: 255
-    t.integer  "question_id", limit: 4
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+  create_table "right_answers", id: :serial, force: :cascade do |t|
+    t.string "answer_id"
+    t.integer "question_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_right_answers_on_question_id"
   end
 
-  add_index "right_answers", ["question_id"], name: "index_right_answers_on_question_id", using: :btree
-
-  create_table "session_shortcuts", force: :cascade do |t|
-    t.string   "session_id", limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+  create_table "session_shortcuts", id: :serial, force: :cascade do |t|
+    t.string "session_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "test_names", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.string   "load_dir",   limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+  create_table "test_names", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.string "load_dir"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "answer_variants", "questions"

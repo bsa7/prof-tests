@@ -1,4 +1,4 @@
-class CreateClientAnswers < ActiveRecord::Migration
+class CreateClientAnswers < ActiveRecord::Migration[5.0]
   def change
     create_table :client_answers do |t|
       t.string :client_shortcut_id

@@ -4,6 +4,7 @@ gem 'rails', '5.1.3'
 gem 'pg', '0.19.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
+gem 'awesome_print', '1.8.0'
 
 gem 'sass-rails', '5.0.6'
 gem 'uglifier', '3.2.0'
@@ -34,3 +35,5 @@ end
 group :development, :test do
   gem 'byebug', '9.0.6'
 end
+
+gem 'rails_12factor', group: :production

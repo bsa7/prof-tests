@@ -1,4 +1,4 @@
-class CreateAnswerVariants < ActiveRecord::Migration
+class CreateAnswerVariants < ActiveRecord::Migration[5.0]
   def change
     create_table :answer_variants do |t|
       t.string :answer_id
