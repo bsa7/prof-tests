@@ -1,10 +1,10 @@
-development:
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: '123123123'
+  pool: 32
 
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: 'appname'
-  pool: 15
-  username: 'database_user_name'
-  password: 'password'
-  socket: /var/run/mysqld/mysqld.sock
+development:
+  <<: *default
+  database: invent_realty_development
