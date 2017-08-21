@@ -20,6 +20,5 @@
 /config/initializers/devise.rb
 /config/database.yml
 /config/deploy.rb
-/config/secrets.yml
 /env
 /restart_rails.sh
